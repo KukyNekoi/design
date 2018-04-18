@@ -44,7 +44,6 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="active" href="index.html">Inicio</a></li>
-                <li><a class="active" href="#">Añadir un nuevo recurso</a></li>
                 <li><a  href="#">Ver por Rango</a></li>
                 <li class="drop"><a href="#">Bienvenido, Lupita</a>
                 <ul class="drop-down">
@@ -83,79 +82,123 @@
         <!-- end head-page-section -->
         
         <!-- page section
-  ================================================== -->
-  <section>
-    <div class="page-section pad-sec">
-      <div class="container">
+      ================================================== -->
+      <section>
+        <div class="page-section pad-sec">
+          <div class="container">
 
-        <div class="row">
-          <div class="col-md-12 pad-bt-60">
-            <div class="heading-block">
-              <table border="0"><tr><td><h2>Nº de Nuevas entidades internacionales vinculadas al CET</h2></td><td style="padding-left: 200px;"><div class="filter-shop-bar">
-                        <span>Mostrar Gráfico</span>
-                        <select>
-                          <option>Barras</option>
-                          <option>Líneas</option>
-                          <option>Circular</option>
-                          <option>Área</option>
-                        </select>
-                      </div> <!-- end filter-shop-bar --></td></tr></table>
-            </div>
-          </div> <!-- end col-md-12 -->
-        </div> <!-- end row -->
-          
-          <div class="row">
-          <div class="col-md-12 pad-bt-60">
-            <center><img src="assets/images/graph_indicadorgeneral.PNG"></center>
-          </div> <!-- end col-md-12 -->
-        </div> <!-- end row -->
-          
-          <div class="sep-section"></div>
-          
-        <div class="row">
-          <div class="col-md-12 pad-bt-60">
-            <div class="heading-block">
-                <h2>Detalle de Recursos</h2>
-            </div>
+            <div class="row">
+              <div class="col-md-12 pad-bt-60">
+                <div class="heading-block">
+                  <table border="0"><tr><td><h2>Nº de Nuevas entidades internacionales vinculadas al CET</h2></td><td style="padding-left: 200px;"><div class="filter-shop-bar">
+                            <span>Mostrar Gráfico</span>
+                            <select>
+                              <option>Barras</option>
+                              <option>Líneas</option>
+                              <option>Circular</option>
+                              <option>Área</option>
+                            </select>
+                          </div> <!-- end filter-shop-bar --></td></tr></table>
+                </div>
+              </div> <!-- end col-md-12 -->
+            </div> <!-- end row -->
               
-              <div class="panel panel-default">
-              <!-- Default panel contents -->
-              <div class="panel-heading">Nombre del Recurso</div>
-              <div class="panel-body">
-                  <!-- Table -->
-                  <table class="table">
-                   <tr><td><b>Fecha</b></td><td>dd-mmm-aaaa</td></tr>
-                   <tr><td><b>Descripción del Recurso</b></td><td>...</td></tr>
-                   <tr><td><b>Recurso</b></td><td><a href="#">recurso.jpg</a></td></tr>
-                  </table>
-              </div>
-              </div>
+              <div class="row">
+              <div class="col-md-12 pad-bt-60">
+                <center><img src="assets/images/graph_indicadorgeneral.PNG"></center>
+              </div> <!-- end col-md-12 -->
+            </div> <!-- end row -->
               
-              <div class="panel panel-default">
-              <!-- Default panel contents -->
-              <div class="panel-heading">Nombre del Recurso</div>
-              <div class="panel-body">
-                  <!-- Table -->
-                  <table class="table">
-                   <tr><td><b>Fecha</b></td><td>dd-mmm-aaaa</td></tr>
-                   <tr><td><b>Descripción del Recurso</b></td><td>...</td></tr>
-                   <tr><td><b>Recurso</b></td><td><a href="#">recurso.jpg</a></td></tr>
-                  </table>
-              </div>
-              </div>
+              <div class="sep-section"></div>
               
-          </div> <!-- end col-md-12 -->
-        </div> <!-- end row -->
-          
-          
-      </div> <!-- end container -->
-    </div> <!-- end shortcodes-section -->
-  </section>   <!-- end page-section -->
-    
-    </div>
-      <!-- end wrapper -->
-    
-      <!-- Footer
+            <div class="row">
+              <div class="col-md-12 pad-bt-60">
+                <div class="heading-block">
+                    <h2>Detalle de Recursos</h2>
+                </div>
+                  
+                  <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading">Nombre del Recurso</div>
+                  <div class="panel-body">
+                      <!-- Table -->
+                      <table class="table">
+                       <tr><td><b>Fecha</b></td><td>dd-mmm-aaaa</td></tr>
+                       <tr><td><b>Descripción del Recurso</b></td><td>...</td></tr>
+                       <tr><td><b>Recurso</b></td><td><a href="#">recurso.jpg</a></td></tr>
+                      </table>
+                  </div>
+                  </div>
+                  
+                  <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading">Nombre del Recurso</div>
+                  <div class="panel-body">
+                      <!-- Table -->
+                      <table class="table">
+                       <tr><td><b>Fecha</b></td><td>dd-mmm-aaaa</td></tr>
+                       <tr><td><b>Descripción del Recurso</b></td><td>...</td></tr>
+                       <tr><td><b>Recurso</b></td><td><a href="#">recurso.jpg</a></td></tr>
+                      </table>
+                  </div>
+                  </div>
+
+                  <!-- Modal with login -->
+                <div class="col-sm-3">
+                  <div class="modal-box">
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
+                      Añadir registro
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="modal-loginlLabel">
+                      <div class="modal-dialog modal-dialog-login">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          </div>
+                          <div id="login" class="modal-body">
+                            <div  class="modal-form-wrap">
+                              <h3>Agregar un registro</h3>
+                                <form role="form" action="javascript:;" method="post" id="login-form" autocomplete="off">
+                                    <div class="form-group">
+                                        <label for="name" class="sr-only">Nombre del registro</label>
+                                        <input type="name" name="name" id="name" class="form-control" placeholder="Nombre del registro">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">Fecha</label>
+                                        <input name="fecha" id="email" class="form-control" placeholder="Fecha">
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="sr-only">Recurso</label>
+                                        <input name="recurso" id="recurso" class="form-control" placeholder="Recurso">
+                                    </div>
+
+                                    <div class="form-group">
+                                      <button type="button" class="btn btn-sm btn-clean-2" >Seleccionar Recursos</button>
+                                    </div>
+
+                                    <input type="submit" id="btn-login" class="btn btn-primary btn-md btn-block" value="Añadir" data-dismiss="modal">
+                              </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div> <!-- end col-sm-4 -->
+                <!-- End Modal with logi -->
+                  
+              </div> <!-- end col-md-12 -->
+            </div> <!-- end row -->
+          </div> <!-- end container -->
+        </div> <!-- end shortcodes-section -->
+      </section>   <!-- end page-section -->
+  </div>
+  <!-- end wrapper -->
+
+  <!-- Footer
   ================================================== -->
   <footer>
     <div class="up-footer">
@@ -261,6 +304,33 @@
 
     </footer>
   <!-- End footer -->
+
+  <!-- JS libraries and scripts -->
+  <script src="assets/js/jquery-1.11.3.min.js"></script>
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/jquery.easing.1.3.js"></script>
+  <script src="assets/js/jquery.smoothscroll.js"></script>
+  <script src="assets/js/jquery.stellar.min.js"></script>
+  <script src="assets/js/jquery.countTo.js"></script>
+  <script src="assets/js/jquery.waypoints.js"></script>
+  <script src="assets/js/jquery.imagesloaded.min.js"></script>
+  <script src="assets/js/jquery.appear.min.js"></script>
+  <script src="assets/js/jquery.bxslider.min.js"></script>
+  <script src="assets/js/jquery.touchSwipe.min.js"></script>
+  <script src="assets/js/jquery.isotope.js"></script>
+  <script src="assets/js/jquery.placeholder.js"></script>
+  <script src="assets/js/jquery.ajaxchimp.min.js"></script>
+  <script src="assets/js/jquery.fitvids.js"></script>
+  <script src="assets/js/jquery.magnific-popup.min.js"></script>
+  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+  <script src="assets/js/jquery.owl.carousel.min.js"></script>
+  <script src="assets/js/jquery.superslides.min.js"></script>
+  <script src="assets/js/jquery.morphext.min.js"></script>
+  <script src="assets/js/jquery.nouislider.min.js"></script>
+  <script src="assets/js/jquery.flexslider-min.js"></script>
+  <script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+  <script src="assets/js/jquery.gmaps.js"></script>
+  <script src="assets/js/main.js"></script>
 
 </body>
 </html>
