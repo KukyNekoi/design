@@ -20,7 +20,10 @@
       "styles": [
         "styles.css",
         "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-        "assets/css/style.css"
+        "assets/css/style.css",
+        "assets/css/animate.css",
+        "assets/fonts/font-awesome-4.3/css/font-awesome.min.css",
+        "assets/fonts/et-line-font/style.css"
       ],
       "scripts": [],
       "environmentSource": "environments/environment.ts",
