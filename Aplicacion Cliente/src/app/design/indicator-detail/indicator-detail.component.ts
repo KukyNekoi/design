@@ -6,8 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./indicator-detail.component.css']
 })
 export class IndicatorDetailComponent implements OnInit {
+  public data: any[];
 
-  constructor() { }
+  constructor() { 
+    this.data = [{
+      option: [
+        {name: 'Barras'},{name: 'Líneas'},{name: 'Circular'}
+      ]
+    }];
+
+  }
 
   ngOnInit() {
   }

@@ -10,7 +10,8 @@ import { HeaderComponent } from './design/header/header.component';
 import { FooterComponent } from './design/footer/footer.component';
 import { IndicatorHomeComponent } from './design/indicator-home/indicator-home.component';
 import { IndicatorDisplayComponent } from './design/indicator-home/indicator-display/indicator-display.component';
-
+import { IndicatorDetailComponent } from './design/indicator-detail/indicator-detail.component';
+import { IndicatorGraphOptionComponent } from './design/indicator-detail/indicator-graph-option/indicator-graph-option.component';
 
 
 @NgModule({
@@ -20,7 +21,9 @@ import { IndicatorDisplayComponent } from './design/indicator-home/indicator-dis
     HeaderComponent,
     FooterComponent,
     IndicatorHomeComponent,
-    IndicatorDisplayComponent
+    IndicatorDisplayComponent,
+    IndicatorDetailComponent,
+    IndicatorGraphOptionComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +31,7 @@ import { IndicatorDisplayComponent } from './design/indicator-home/indicator-dis
     FormsModule,
 
     RouterModule.forRoot([{
-      path: '',  component: IndicatorHomeComponent
+      path: '',  component: IndicatorDetailComponent
     }])
   ],
   providers: [],
