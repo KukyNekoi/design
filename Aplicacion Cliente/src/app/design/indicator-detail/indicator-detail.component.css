@@ -3,5 +3,8 @@
 }
 
 .row-number {
-    background: red;
+    width: 30%;
+    height: 30%;
+    padding: 20px;
+    background: #FFFF99;
 }

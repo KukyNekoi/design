@@ -12,6 +12,7 @@ import { IndicatorHomeComponent } from './design/indicator-home/indicator-home.c
 import { IndicatorDisplayComponent } from './design/indicator-home/indicator-display/indicator-display.component';
 import { IndicatorDetailComponent } from './design/indicator-detail/indicator-detail.component';
 import { IndicatorGraphOptionComponent } from './design/indicator-detail/indicator-graph-option/indicator-graph-option.component';
+import { IndicatorDetailFilesComponent } from './design/indicator-detail/indicator-detail-files/indicator-detail-files.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { IndicatorGraphOptionComponent } from './design/indicator-detail/indicat
     IndicatorHomeComponent,
     IndicatorDisplayComponent,
     IndicatorDetailComponent,
-    IndicatorGraphOptionComponent
+    IndicatorGraphOptionComponent,
+    IndicatorDetailFilesComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
