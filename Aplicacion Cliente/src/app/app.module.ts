@@ -13,6 +13,7 @@ import { IndicatorDisplayComponent } from './design/indicator-home/indicator-dis
 import { IndicatorDetailComponent } from './design/indicator-detail/indicator-detail.component';
 import { IndicatorGraphOptionComponent } from './design/indicator-detail/indicator-graph-option/indicator-graph-option.component';
 import { IndicatorDetailFilesComponent } from './design/indicator-detail/indicator-detail-files/indicator-detail-files.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -28,10 +29,10 @@ import { IndicatorDetailFilesComponent } from './design/indicator-detail/indicat
     IndicatorDetailFilesComponent
   ],
   imports: [
+    NgbModule.forRoot(),
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
-
     RouterModule.forRoot([{
       path: '',  component: IndicatorDetailComponent
     }])
