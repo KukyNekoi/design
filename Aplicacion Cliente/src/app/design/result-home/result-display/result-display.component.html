@@ -1,0 +1,32 @@
+<section>
+  <div id="statistic-section" class="statistic-bg" data-stellar-background-ratio="0">
+    <div class="container">
+      <div class="row">
+        <ng-template ngFor let-detail [ngForOf]="result.details" let-i="index" [ngForTrackBy]="trackByFn">
+          <!--separador-->
+          <div *ngIf="(i%3===0) && (i>0)" class="col-md-12" style="border: 15px solid transparent;"></div>
+          <!-- end col-xs-6 col-sm-3 col-md-3 -->
+          <div class="col-xs-6 col-sm-3 col-md-4">
+            <a class="active" href="resultgeneral.html">
+              <div class="services-content">
+                <div class="statistic-percent" [attr.data-perc]="'detail.value'">
+                  <div class="fact">
+                    <span class="percentfactor">{{detail.value}}</span>
+                    <p>{{detail.title}}</p>
+                  </div>
+                  <!-- end fact -->
+                </div>
+                <!-- end statistic-percent -->
+              </div>
+              <!-- end col-xs-6 col-sm-3 col-md-3 -->
+            </a>
+          </div>
+        </ng-template>
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end statistic-section -->
+</section>
+<!-- End statistic section -->

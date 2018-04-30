@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { BaseComponent } from './design/base/base.component';
 import { HeaderComponent } from './design/header/header.component';
 import { FooterComponent } from './design/footer/footer.component';
+import { ResultHomeComponent } from './design/result-home/result-home.component';
+import { ResultDisplayComponent } from './design/result-home/result-display/result-display.component';
 import { IndicatorHomeComponent } from './design/indicator-home/indicator-home.component';
 import { IndicatorDisplayComponent } from './design/indicator-home/indicator-display/indicator-display.component';
 
@@ -19,8 +21,10 @@ import { IndicatorDisplayComponent } from './design/indicator-home/indicator-dis
     BaseComponent,
     HeaderComponent,
     FooterComponent,
+    ResultHomeComponent,
+    ResultDisplayComponent,
     IndicatorHomeComponent,
-    IndicatorDisplayComponent
+    IndicatorDisplayComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -28,7 +32,7 @@ import { IndicatorDisplayComponent } from './design/indicator-home/indicator-dis
     FormsModule,
 
     RouterModule.forRoot([{
-      path: '',  component: IndicatorHomeComponent
+      path: '',  component: ResultHomeComponent
     }])
   ],
   providers: [],
