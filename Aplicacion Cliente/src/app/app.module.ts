@@ -14,6 +14,7 @@ import { IndicatorDetailComponent } from './design/indicator-detail/indicator-de
 import { IndicatorGraphOptionComponent } from './design/indicator-detail/indicator-graph-option/indicator-graph-option.component';
 import { IndicatorDetailFilesComponent } from './design/indicator-detail/indicator-detail-files/indicator-detail-files.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './design/login/login.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     IndicatorDisplayComponent,
     IndicatorDetailComponent,
     IndicatorGraphOptionComponent,
-    IndicatorDetailFilesComponent
+    IndicatorDetailFilesComponent,
+    LoginComponent
   ],
   imports: [
     NgbModule.forRoot(),
