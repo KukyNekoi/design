@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-indicator-detail-files',
@@ -6,8 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./indicator-detail-files.component.css']
 })
 export class IndicatorDetailFilesComponent implements OnInit {
-
-  constructor() { }
+  @Input() public recordFilter: any;
+  constructor() {
+    console.log(this.recordFilter);
+  }
 
   ngOnInit() {
   }
