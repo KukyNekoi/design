@@ -36,7 +36,9 @@ import { LoginComponent } from './design/login/login.component';
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([{
-      path: '',  component: IndicatorDetailComponent
+      path: '',  component: IndicatorHomeComponent
+    }, {
+      path: 'detail',  component: IndicatorDetailComponent
     }])
   ],
   providers: [],

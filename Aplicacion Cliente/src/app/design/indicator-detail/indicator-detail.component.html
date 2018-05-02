@@ -72,7 +72,7 @@
             <ng-template ngFor let-recordFilter [ngForOf]="filters" let-i="index">
                 <ngb-tab>
                     <ng-template ngbTabTitle>
-                      <a href="{{recordFilter.key}}"> {{recordFilter.title}} </a> hola
+                      <a href="{{recordFilter.key}}"> {{recordFilter.title}} </a>
                     </ng-template>
                     <ng-template ngbTabContent>
                       <app-indicator-detail-files [recordFilter]="recordFilter"></app-indicator-detail-files>
