@@ -15,6 +15,7 @@ import { IndicatorGraphOptionComponent } from './design/indicator-detail/indicat
 import { IndicatorDetailFilesComponent } from './design/indicator-detail/indicator-detail-files/indicator-detail-files.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './design/login/login.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { LoginComponent } from './design/login/login.component';
       path: '',  component: IndicatorHomeComponent
     }, {
       path: 'detail',  component: IndicatorDetailComponent
-    }])
+    }]),
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -29,6 +29,24 @@
   margin: 1em;
 }
 
+.pull-right .centered-vertical{
+  // padding-top: 30px;
+  // padding-bottom: 30px;
+}
+
 .clickeable{
   display:block;
+}
+
+.value-box {
+  height: 1.8em;
+  background: #47b475;
+  width: 3em;
+  padding: 1px;
+  text-align: center;
+}
+
+.not-bold-but-italic{
+  font-weight: lighter;
+  font-style: italic;
 }

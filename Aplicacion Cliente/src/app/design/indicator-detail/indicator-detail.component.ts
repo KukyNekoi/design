@@ -31,13 +31,15 @@ export class IndicatorDetailComponent implements OnInit {
                 rname: 'documento 1',
                 rtype: 'Tipo1',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               },
               {
                 rname: 'documento 2',
                 rtype: 'Tipo2',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               }
             ]
           },
@@ -51,13 +53,15 @@ export class IndicatorDetailComponent implements OnInit {
                 rname: 'documento 45',
                 rtype: 'Tipo1',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               },
               {
                 rname: 'documento 2',
                 rtype: 'Tipo2',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               }
             ]
           }
@@ -77,13 +81,15 @@ export class IndicatorDetailComponent implements OnInit {
                 rname: 'documento 1',
                 rtype: 'Tipo1',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               },
               {
                 rname: 'documento 2',
                 rtype: 'Tipo2',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               }
             ]
           },
@@ -97,13 +103,15 @@ export class IndicatorDetailComponent implements OnInit {
                 rname: 'documento 45',
                 rtype: 'Tipo1',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               },
               {
                 rname: 'documento 2',
                 rtype: 'Tipo2',
                 rdate: 'dd-mm-aaaa',
-                rlink: '#'
+                rlink: '#',
+                rdesc: 'Descripción'
               }
             ]
           }
