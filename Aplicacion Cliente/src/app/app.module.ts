@@ -41,9 +41,13 @@ import { IndicatorHomeComponent } from './design/indicator-home/indicator-home.c
     HttpClientModule,
     FormsModule,
     RouterModule.forRoot([{
-      path: '',  component: IndicatorHomeComponent
+      path: 'indicator',  component: IndicatorHomeComponent
     }, {
       path: 'detail',  component: IndicatorDetailComponent
+    } , {
+      path: 'login',  component: LoginComponent
+    }, {
+      path: 'result',  component: ResultHomeComponent
     }]),
     FlexLayoutModule
   ],
