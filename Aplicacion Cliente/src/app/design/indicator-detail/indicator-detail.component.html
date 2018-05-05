@@ -1,0 +1,88 @@
+<!-- Head page section================================================== -->
+<section>
+  <div id="head-page-section" class="l-grey-bg head-page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 col-sm-7">
+          <div class="head-title">
+            <h1>
+              Vinculación con entidades nacionales e internacionales
+            </h1>
+          </div>
+          <!-- end subsection-text -->
+        </div>
+        <!-- end col-md-8 -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>
+</section>
+<!-- end head-page-section -->
+<!-- about boxes
+================================================== -->
+<section>
+  <div class="page-section pad-sec">
+    <div class="container">
+      <!--subtitle row ===================================== -->
+      <div class="row">
+        <div class="col-md-12 pad-bt-60">
+          <div class="heading-block">
+            <table border="0">
+              <tr>
+                <td>
+                  <h2>Nº de Nuevas entidades internacionales vinculadas al CET</h2>
+                </td>
+                <td align="center">
+                  <div class="row-number">
+                    <h1>%%</h1>
+                  </div>
+                </td>
+              </tr>
+              <tr>
+                <td></td>
+                <td style="padding-left: 200px;">
+                  <app-indicator-graph-option [graph]="data[0]"></app-indicator-graph-option>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- end col-md-12 -->
+      </div>
+      <!-- end row -->
+      <!--graph row ======================================== -->
+      <div class="row">
+        <div class="col-md-12 pad-bt-60">
+          <span style="margin: 0 auto;">
+            <img src="/assets/images/chart_indicadorgeneral.png">
+          </span>
+        </div>
+        <!-- end col-md-12 -->
+      </div>
+      <!-- end row -->
+      <!--details files row ======================================== -->
+      <div class="row">
+        <div class="col-md-12 pad-bt-60">
+          <div class="heading-block">
+            <h2>Descripción</h2>
+          </div>
+          <!--Begin tab-->
+          <ngb-tabset>
+            <ng-template ngFor let-recordFilter [ngForOf]="filters" let-i="index">
+                <ngb-tab>
+                    <ng-template ngbTabTitle>
+                      <a href="{{recordFilter.key}}"> {{recordFilter.title}} </a>
+                    </ng-template>
+                    <ng-template ngbTabContent>
+                      <app-indicator-detail-files [recordFilter]="recordFilter"></app-indicator-detail-files>
+                    </ng-template>
+                  </ngb-tab>  
+            </ng-template>
+          </ngb-tabset>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

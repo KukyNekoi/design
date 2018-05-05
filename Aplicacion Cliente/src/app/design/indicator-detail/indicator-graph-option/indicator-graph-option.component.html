@@ -1,0 +1,8 @@
+<div class="filter-shop-bar">
+  <span>Mostrar Gráfico</span>
+  <select style="padding:10px;">
+      <ng-template ngFor let-option [ngForOf]="graph.option" let-i="index">
+      <option>{{option.name}}</option>
+      </ng-template>
+  </select>
+</div> <!-- end filter-shop-bar -->
