@@ -8,3 +8,9 @@
     padding: 20px;
     background: #FFFF99;
 }
+
+.row-h1 {
+    color: #434343;
+    font-size: 32px;
+    font-weight: 500;
+}
