@@ -50,18 +50,12 @@
             <table border="0">
               <tr>
                 <td>
-                  <h2>Nº de Nuevas entidades internacionales vinculadas al CET</h2>
+                  <h2>Descripción</h2>
                 </td>
-                <td align="center">
-                  <div class="row-number">
-                    <h1>%%</h1>
-                  </div>
-                </td>
-              </tr>
-              <tr>
-                <td></td>
                 <td style="padding-left: 200px;">
-                  <app-indicator-graph-option [graph]="data[0]"></app-indicator-graph-option>
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
+                    Añadir registro
+                  </button>
                 </td>
               </tr>
             </table>
@@ -84,7 +78,7 @@
       <div class="row">
         <div class="col-md-12 pad-bt-60">
           <div class="heading-block">
-            <h2>Descripción</h2>
+            
           </div>
           <!--Begin tab-->
           <ngb-tabset>
