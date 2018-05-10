@@ -13,3 +13,9 @@
     font-size: 32px;
     font-weight: 500;
 }
+
+.shortcode {
+    background-color: #fcfcfc!important;
+    text-align:center; 
+    border-radius:0;
+}
