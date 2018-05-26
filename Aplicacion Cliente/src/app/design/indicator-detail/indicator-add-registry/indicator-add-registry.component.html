@@ -1,0 +1,83 @@
+
+<form #addRegistryForm="ngForm">
+
+  <div class="modal-body">
+
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <h4 class="modal-h4 text-left">Información Básica</h4>
+        </div>
+        <div class="form-group col-xs-12 col-sm-8 col-md-8">
+          <label>Nombre</label>
+          <input type="text" placeholder="Nombre" class="form-control" id="name" required />
+          <div [hidden]="true" class="alert alert-danger">
+            Nombre no puede estar vacio
+          </div>
+        </div>
+
+        <div class="form-group col-xs-12 col-sm-4 col-md-4">
+          <label for="date">Fecha</label>
+          <input type="text" placeholder="Ingrese fecha" class="form-control" id="date" required bsDatepicker />
+          <div [hidden]="true" class="alert alert-danger">
+            Fecha es requerida
+          </div>
+        </div>
+
+        <div class="form-group col-sm-12 col-md-12">
+          <label for="quantity">Valor</label>
+          <input type="text" placeholder="Ingrese valor" pattern="[0-9]{1,}" class="form-control" id="quantity" required />
+          <div [hidden]="true" class="alert alert-danger">
+            Cantidad deber ser un número entero
+          </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+
+        <div class="col-xs-10 col-sm-8 col-md-9">
+          <h4 class="modal-h4 text-left">Documentación de respaldo</h4>
+        </div>
+
+        <div class="col-xs-2 col-sm-4 col-md-3">
+          <button class="btn modal-btn-sm btn-success pull-right" type="button"  data-toggle="modal" (click)="openModalAddDocument(addRegistry)"><i class="glyphicon glyphicon-plus"></i><small class="hidden-xs"> Nuevo</small></button>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <div class="form-group">
+            <div class="modal-table-responsive">
+              <table class="table">
+                <thead>
+                  <tr class="active">
+                    <th colspan="1">Nombre</th>
+                    <th class="hidden-xs" colspan="1">Tipo</th>
+                    <th colspan="2"> </th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <!--
+                    Esta sección contiene uno de los documentos agregados
+                  -->
+                    <tr>
+                      <td>Holamundo.c</td>
+                      <td class="hidden-xs">Archivo</td>
+                      <td class="pull-right">
+                          <button class="btn btn-warning modal-btn-sm" type="button"> <i class="glyphicon glyphicon-share"></i><small class="hidden-xs"> Descargar</small></button>
+                          <button class="btn btn-danger modal-btn-sm" type="button"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Eliminar</small></button>
+                      </td>
+                    </tr>
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+
+  <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+    <button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button>
+  </div>
+    
+</form>

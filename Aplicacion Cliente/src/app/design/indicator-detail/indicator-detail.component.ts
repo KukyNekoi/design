@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, TemplateRef } from '@angular/core';
+
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-indicator-detail',
@@ -8,8 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class IndicatorDetailComponent implements OnInit {
   public data: any[];
   public filters: any[];
+  public editModalRef: BsModalRef;
 
-  constructor() {
+  constructor(private modalService: BsModalService) {
     this.data = [
       {
         option: [{ name: 'Barras' }, { name: 'Líneas' }, { name: 'Circular' }]
@@ -118,6 +122,10 @@ export class IndicatorDetailComponent implements OnInit {
         ]
       }
     ];
+  }
+
+  openModalAddRegistry(template: TemplateRef<any>) {
+    this.editModalRef = this.modalService.show(template);
   }
 
   ngOnInit() {}
