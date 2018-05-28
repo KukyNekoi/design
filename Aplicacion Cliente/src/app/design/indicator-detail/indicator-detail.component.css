@@ -21,3 +21,13 @@
     text-align:center; 
     border-radius:0;
 }
+
+.textfilter {
+    text-align:left!important;
+}
+
+.buttonlink {
+    background-color: transparent!important;
+    color: #47b475;
+    border: none;
+}
