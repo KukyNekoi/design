@@ -40,7 +40,7 @@
 
 .value-box {
   height: 1.8em;
-  background: #47b475;
+  //background: #47b475;
   width: 3em;
   padding: 1px;
   text-align: center;
@@ -49,4 +49,10 @@
 .not-bold-but-italic{
   font-weight: lighter;
   font-style: italic;
+}
+
+.btn-size-text {
+  text-transform: uppercase!important;
+  text-align: center;
+  color: #ffffff!important;
 }
