@@ -14,6 +14,7 @@ export class IndicatorDetailComponent implements OnInit {
   public filters: any[];
   public addRegistryModalRef: BsModalRef;
   public modalDateFilter: BsModalRef;
+  public modalEditIndicator: BsModalRef;
 
   constructor(private modalService: BsModalService) {
     this.data = [
@@ -136,6 +137,10 @@ export class IndicatorDetailComponent implements OnInit {
 
   openModalDateFilter(template: TemplateRef<any>) {
     this.modalDateFilter = this.modalService.show(template);
+  }
+
+  openModalEditIndicator(template: TemplateRef<any>) {
+    this.modalEditIndicator = this.modalService.show(template);
   }
 
   ngOnInit() {}

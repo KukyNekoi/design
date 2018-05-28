@@ -42,8 +42,8 @@
 <section>
   <div>
         <ol class="breadcrumb shortcode">
-          <li><a href="index.html">Modificar Meta</a></li>
-          <li><a href="index.html#portfolio-section">Modificar Indicador</a></li>
+          <li><button class="buttonlink" >Modificar Meta</button></li>
+          <li><button class="buttonlink" (click)="openModalEditIndicator(editindicator)">Modificar Indicador</button></li>
         </ol>
   </div>
 </section>
@@ -182,3 +182,29 @@
       <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Filtrar</button>
     </div>
   </ng-template>
+
+
+  <ng-template #editindicator>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left">Modificar Indicador</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              <h4 class="head-project-title">Información Básica</h4>
+          </div>
+          <div class="form-group col-sm-12 col-md-12">
+              <label>Nombre del Indicador</label>
+              <input type="text" placeholder="Nº de Nuevas entidades internacionales vinculadas al CET" class="form-control" id="name"/>
+              <div [hidden]="true" class="alert alert-danger">
+                  Nombre no puede estar vacío
+              </div>
+          </div>
+
+      </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
+      </div>
+    </ng-template>
