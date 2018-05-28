@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 import { AppComponent } from './app.component';
 import { BaseComponent } from './design/base/base.component';
@@ -18,6 +21,7 @@ import { ResultHomeComponent } from './design/result-home/result-home.component'
 import { ResultDisplayComponent } from './design/result-home/result-display/result-display.component';
 import { IndicatorDisplayComponent } from './design/indicator-home/indicator-display/indicator-display.component';
 import { IndicatorHomeComponent } from './design/indicator-home/indicator-home.component';
+import { IndicatorAddRegistryComponent } from './design/indicator-detail/indicator-add-registry/indicator-add-registry.component';
 
 
 @NgModule({
@@ -33,13 +37,17 @@ import { IndicatorHomeComponent } from './design/indicator-home/indicator-home.c
     IndicatorDetailComponent,
     IndicatorGraphOptionComponent,
     IndicatorDetailFilesComponent,
-    LoginComponent
+    LoginComponent,
+    IndicatorAddRegistryComponent
   ],
   imports: [
     NgbModule.forRoot(),
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
     HttpClientModule,
     FormsModule,
+    ModalModule.forRoot(),
+    BsDatepickerModule.forRoot(),
+    CollapseModule.forRoot(),
     RouterModule.forRoot([{
       path: 'indicator',  component: IndicatorHomeComponent
     }, {
