@@ -127,7 +127,6 @@ export class IndicatorDetailComponent implements OnInit {
   }
 
   openModalAddRegistry(template: TemplateRef<any>) {
- 
     this.addRegistryModalRef = this.modalService.show(template, {
       backdrop: 'static'
     });

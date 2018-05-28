@@ -11,13 +11,13 @@ export class ResultHomeComponent implements OnInit {
 
   public data: any[];
 
-  constructor() 
-  {
+  constructor() {
     this.data = [
     {
       details: [
         { title: 'Vinculación con entidades nacionales e internacionales'},
         { title: 'Vinculación con Académicos y Estudiantes' },
+        // tslint:disable-next-line:max-line-length
         { title: 'Formación de los profesionales extensionistas e integrantes del equipo de gestión en ámbitos relacionados al Extensionismo tecnológico '},
         { title: 'Prestación de servicios de extensionismo tecnológico a empresas'},
       ]
