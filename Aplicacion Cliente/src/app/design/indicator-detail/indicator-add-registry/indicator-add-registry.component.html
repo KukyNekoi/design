@@ -7,11 +7,12 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
           <h4 class="modal-h4 text-left">Información Básica</h4>
         </div>
+
         <div class="form-group col-xs-12 col-sm-8 col-md-8">
           <label>Nombre</label>
           <input type="text" placeholder="Nombre" class="form-control" id="name" required />
           <div [hidden]="true" class="alert alert-danger">
-            Nombre no puede estar vacio
+            Nombre no puede estar vacío
           </div>
         </div>
 
@@ -39,9 +40,54 @@
         </div>
 
         <div class="col-xs-2 col-sm-4 col-md-3">
-          <button class="btn modal-btn-sm btn-success pull-right" type="button"  data-toggle="modal" (click)="openModalAddDocument(addRegistry)"><i class="glyphicon glyphicon-plus"></i><small class="hidden-xs"> Nuevo</small></button>
+          <button class="btn modal-btn-sm btn-success pull-right" type="button" [attr.aria-expanded]="!newIsCollapsed" (click)="newIsCollapsed = !newIsCollapsed"><i class="glyphicon glyphicon-plus"></i><small class="hidden-xs"> Nuevo</small></button>
         </div>
+    </div>
 
+    <div class="row">
+      <form #addDocumentForm="ngForm">
+        <div id="collapseBasic" [collapse]="newIsCollapsed" class="card-block col-md-12">
+          <div class="well well-lg">
+
+            <div class="row">
+                <div class="form-group col-xs-12 col-sm-8 col-md-8">
+                  <label>Nombre / Link</label>
+                  <input type="text" placeholder="Nombre" class="form-control" id="name-doc" required />
+                  <div [hidden]="true" class="alert alert-danger">
+                    Nombre / Link no puede estar vacío
+                  </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-4 col-md-4">
+                  <label for="date">Fecha</label>
+                  <input type="text" placeholder="Ingrese fecha" class="form-control" id="date-doc" required bsDatepicker />
+                  <div [hidden]="true" class="alert alert-danger">
+                    Fecha es requerida
+                  </div>
+                </div>
+
+                <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                  <label for="quantity">Archivo de respaldo</label>
+                  <input type="file" class="form-control" id="file-doc" required />
+                  <div [hidden]="true" class="alert alert-danger">
+                    Debe ingresar un documento de respaldo
+                  </div>
+                </div>
+            </div>
+            
+            <div class="row">
+              <div class="pull-right">
+                <button class="btn btn-success modal-btn-sm" type="submit" [disabled]="!addDocumentForm.form.valid" [attr.aria-expanded]="!newIsCollapsed" (click)="addDocument()"> <i class="glyphicon glyphicon-ok"></i><small class="hidden-xs"> Agregar Documento</small></button>
+                <button class="btn btn-danger modal-btn-sm" type="button" [attr.aria-expanded]="!newIsCollapsed" (click)="newIsCollapsed = !newIsCollapsed"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Cancelar</small></button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
           <div class="form-group">
             <div class="modal-table-responsive">

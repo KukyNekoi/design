@@ -11,15 +11,16 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 
 export class IndicatorAddRegistryComponent implements OnInit {
   docModalRef: BsModalRef;
-  constructor(private modalService: BsModalService) {}
+  newIsCollapsed = true;
 
-  openModalAddDocument(template: TemplateRef<any>) {
-
-    this.modalService.hide(20);
-    this.docModalRef = null;
-    //this.docModalRef = this.modalService.show(template);
+  constructor(private modalService: BsModalService) {
   }
 
   ngOnInit() {
+  }
+
+  addDocument(){
+    //agregar métodos y cosas para cargar información
+    this.newIsCollapsed=!this.newIsCollapsed;
   }
 }

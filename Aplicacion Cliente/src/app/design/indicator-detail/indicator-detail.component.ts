@@ -11,7 +11,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 export class IndicatorDetailComponent implements OnInit {
   public data: any[];
   public filters: any[];
-  public editModalRef: BsModalRef;
+  public addRegistryModalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) {
     this.data = [
@@ -122,10 +122,15 @@ export class IndicatorDetailComponent implements OnInit {
         ]
       }
     ];
+
+
   }
 
   openModalAddRegistry(template: TemplateRef<any>) {
-    this.editModalRef = this.modalService.show(template);
+ 
+    this.addRegistryModalRef = this.modalService.show(template, {
+      backdrop: 'static'
+    });
   }
 
   ngOnInit() {}

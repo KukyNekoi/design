@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 import { AppComponent } from './app.component';
 import { BaseComponent } from './design/base/base.component';
@@ -46,6 +47,7 @@ import { IndicatorAddRegistryComponent } from './design/indicator-detail/indicat
     FormsModule,
     ModalModule.forRoot(),
     BsDatepickerModule.forRoot(),
+    CollapseModule.forRoot(),
     RouterModule.forRoot([{
       path: 'indicator',  component: IndicatorHomeComponent
     }, {
