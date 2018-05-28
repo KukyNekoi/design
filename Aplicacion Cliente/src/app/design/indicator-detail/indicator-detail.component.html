@@ -17,16 +17,13 @@
         <div class="col-sm-4">
           <div class="head-title">
               <div class="col-sm-6">
-                Valor Indicador
-                <div class="row-number row-h1">
-                  %%
-                </div>
+                <div class="inline" style="text-align: center">Valor Indicador</div>
+                <div class="row-number row-h1 inline">%%</div>
               </div>
+
               <div class="col-sm-6">
-                Valor Meta
-                <div class="row-number row-h1">
-                  %%
-                </div>
+                <div class="inline" style="text-align: center"> Valor Meta</div>
+                <div class="row-number row-h1 inline">%%</div>
               </div>
           </div>
           <!-- end subsection-text -->
@@ -126,11 +123,11 @@
 
   <!--Modal Add Registry-->
   <ng-template #addRegistry>
-      <div class="modal-header">
-        <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-plus-sign"></i> Agregar un nuevo Registro</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="addRegistryModalRef.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <app-indicator-add-registry></app-indicator-add-registry>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-plus-sign"></i> Agregar un nuevo Registro</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="addRegistryModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-add-registry></app-indicator-add-registry>
   </ng-template>
