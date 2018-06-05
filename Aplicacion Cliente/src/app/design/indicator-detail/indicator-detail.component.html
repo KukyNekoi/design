@@ -17,16 +17,13 @@
         <div class="col-sm-4">
           <div class="head-title">
               <div class="col-sm-6">
-                Valor Indicador
-                <div class="row-number row-h1">
-                  %%
-                </div>
+                <div class="inline" style="text-align: center">Valor Indicador</div>
+                <div class="row-number row-h1 inline">%%</div>
               </div>
+
               <div class="col-sm-6">
-                Valor Meta
-                <div class="row-number row-h1">
-                  %%
-                </div>
+                <div class="inline" style="text-align: center"> Valor Meta</div>
+                <div class="row-number row-h1 inline">%%</div>
               </div>
           </div>
           <!-- end subsection-text -->
@@ -42,8 +39,8 @@
 <section>
   <div>
         <ol class="breadcrumb shortcode">
-          <li><a href="index.html">Modificar Meta</a></li>
-          <li><a href="index.html#portfolio-section">Modificar Indicador</a></li>
+          <li><button class="buttonlink" >Modificar Meta</button></li>
+          <li><button class="buttonlink" (click)="openModalEditIndicator(editindicator)">Modificar Indicador</button></li>
         </ol>
   </div>
 </section>
@@ -63,7 +60,7 @@
               </tr>
               <tr>
                 <td width="70%">
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
+                    <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(datefilter)" data-toggle="modal" data-target="#modal-login">
                       Filtrar por Fecha
                     </button>
                 </td>
@@ -126,11 +123,85 @@
 
   <!--Modal Add Registry-->
   <ng-template #addRegistry>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-plus-sign"></i> Agregar un nuevo Registro</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="addRegistryModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-add-registry></app-indicator-add-registry>
+  </ng-template>
+
+  <ng-template #datefilter>
+    <div class="modal-header">
+      <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-calendar"></i> Filtrar por Fecha</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="modalDateFilter.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="textfilter">Años a Calcular</div>
+          <!--Dropdown-->
+          <div class="btn-group" dropdown>
+              <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                      aria-controls="dropdown-basic">2018 <span class="caret"></span>
+              </button>
+              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                  role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
+              </ul>
+            </div>  
+            <!--End Dropdown-->
+        </div>
+        <div class="col-sm-6">
+          <div class="textfilter">Meses a Calcular</div>
+          <!--Dropdown-->
+          <div class="btn-group" dropdown>
+              <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                      aria-controls="dropdown-basic">Todos los meses <span class="caret"></span>
+              </button>
+              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                  role="menu" aria-labelledby="button-basic">
+                <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
+                <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
+              </ul>
+            </div>  
+            <!--End Dropdown-->
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+      <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Filtrar</button>
+    </div>
+  </ng-template>
+
+
+  <ng-template #editindicator>
       <div class="modal-header">
-        <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-plus-sign"></i> Agregar un nuevo Registro</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="addRegistryModalRef.hide()">
+        <h4 class="modal-title pull-left">Modificar Indicador</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <app-indicator-add-registry></app-indicator-add-registry>
-  </ng-template>
+      <div class="modal-body row">
+          <div class="col-xs-12 col-sm-12 col-md-12">
+              <h4 class="head-project-title">Información Básica</h4>
+          </div>
+          <div class="form-group col-sm-12 col-md-12">
+              <label>Nombre del Indicador</label>
+              <input type="text" placeholder="Nº de Nuevas entidades internacionales vinculadas al CET" class="form-control" id="name"/>
+              <div [hidden]="true" class="alert alert-danger">
+                  Nombre no puede estar vacío
+              </div>
+          </div>
+
+      </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
+      </div>
+    </ng-template>

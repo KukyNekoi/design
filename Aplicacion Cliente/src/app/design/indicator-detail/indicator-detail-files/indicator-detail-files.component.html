@@ -4,13 +4,19 @@
     <ngb-panel>
       <ng-template ngbPanelTitle>
         <a fxLayout="row" class="clickeable">
-          <div fxFlex="40%">
+          <div fxFlex="30%">
             {{content.name | uppercase}}
             <br>
             <span class="not-bold-but-italic">{{content.eventDate}}</span>
           </div>
-          <div fxFlex="57%">
+          <div fxFlex="42%">
             <div class="value-box">{{content.value}}</div>
+          </div>
+          <div fxFlex="15%">
+            <a class="btn btn-xs btn-primary btn-size-text">Modificar</a>
+          </div>
+          <div fxFlex="20%">
+            <a class="btn btn-xs btn-danger btn-size-text">Eliminar</a>
           </div>
           <span fxFlex="3%" class="pull-right centered-vertical glyphicon glyphicon-menu-down" style="font-size: 24px;"></span>
         </a>
@@ -18,19 +24,22 @@
       <ng-template ngbPanelContent>
         <ng-template ngFor let-resource [ngForOf]="content.resources" let-i="index">
           <div fxLayout="row">
-            <div fxFlex="21%"> Fecha
+            <div fxFlex="10%"> Fecha
               <br> {{resource.rdate}} </div>
-            <div fxFlex="21%"> Tipo
+            <div fxFlex="10%"> Tipo
               <br> {{resource.rtype}} </div>
-            <div fxFlex="21%"> Descripción
+            <div fxFlex="25%"> Descripción
               <br> {{""}} </div>
-            <div fxFlex="21%"> Detalle
+            <div fxFlex="20%"> Detalle
               <br> {{resource.rlink}} </div>
-            <div fxFlex="8%">
+            <div fxFlex="10%">
               <a class="btn btn-xs btn-primary">Ver</a>
             </div>
-            <div fxFlex="8%">
-              <a class="btn btn-xs btn-info">Descargar</a>
+            <div fxFlex="15%">
+              <a class="btn btn-xs btn-info btn-size-text">Descargar</a>
+            </div>
+            <div fxFlex="10%">
+              <a class="btn btn-xs btn-danger btn-size-text">Eliminar</a>
             </div>
           </div>
           <hr>
