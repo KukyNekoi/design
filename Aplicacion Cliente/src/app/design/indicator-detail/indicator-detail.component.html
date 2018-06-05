@@ -1,0 +1,136 @@
+<!-- Head page section================================================== -->
+<section>
+  <div id="head-page-section" class="l-grey-bg head-page-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="head-title">
+            <h4>Período 2018</h4>
+            <h4>Vinculación con entidades nacionales e internacionales</h4>
+            <h1>
+                Nº de Nuevas entidades internacionales vinculadas al CET
+            </h1>
+          </div>
+          <!-- end subsection-text -->
+        </div>
+        <!-- end col-sm-8 -->
+        <div class="col-sm-4">
+          <div class="head-title">
+              <div class="col-sm-6">
+                Valor Indicador
+                <div class="row-number row-h1">
+                  %%
+                </div>
+              </div>
+              <div class="col-sm-6">
+                Valor Meta
+                <div class="row-number row-h1">
+                  %%
+                </div>
+              </div>
+          </div>
+          <!-- end subsection-text -->
+        </div>
+        <!-- end col-sm-4 -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+  </div>
+</section>
+<!-- end head-page-section -->
+<section>
+  <div>
+        <ol class="breadcrumb shortcode">
+          <li><a href="index.html">Modificar Meta</a></li>
+          <li><a href="index.html#portfolio-section">Modificar Indicador</a></li>
+        </ol>
+  </div>
+</section>
+<!-- about boxes
+================================================== -->
+<section style="margin-top: -70px;">
+  <div class="page-section pad-sec">
+    <div class="container">
+      <!--subtitle row ===================================== -->
+      <div class="row">
+        <div class="col-md-12 pad-bt-60">
+          <div class="heading-block">
+            <table border="0">
+              <tr>
+                <td width="70%"></td>
+                <td style="padding-left: 200px;"><span>Mostrar Gráfico</span></td>
+              </tr>
+              <tr>
+                <td width="70%">
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
+                      Filtrar por Fecha
+                    </button>
+                </td>
+                <td style="padding-left: 200px;">
+                    <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <!-- end col-md-12 -->
+      </div>
+      <!-- end row -->
+      <!--graph row ======================================== -->
+      <div class="row">
+        <div class="col-md-12 pad-bt-60">
+          <span style="margin: 0 auto;">
+            <img src="/assets/images/chart_indicadorgeneral.png">
+          </span>
+        </div>
+        <!-- end col-md-12 -->
+      </div>
+      <!-- end row -->
+      <!--details files row ======================================== -->
+      <div class="row">
+        <div class="col-md-12 pad-bt-60">
+          <div class="heading-block">
+            <table border="0">
+              <tr>
+                <td width="70%">
+                  <h2>Descripción</h2>
+                </td>
+                <td style="padding-left: 200px;">
+                  <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" (click)="openModalAddRegistry(addRegistry)">
+                    <i class="glyphicon glyphicon-plus-sign"></i> Añadir registro
+                  </button>
+                </td>
+              </tr>
+            </table>  
+          </div>
+          <!--Begin tab-->
+          <ngb-tabset>
+            <ng-template ngFor let-recordFilter [ngForOf]="filters" let-i="index">
+                <ngb-tab>
+                    <ng-template ngbTabTitle>
+                      <a href="{{recordFilter.key}}"> {{recordFilter.title}} </a>
+                    </ng-template>
+                    <ng-template ngbTabContent>
+                      <app-indicator-detail-files [recordFilter]="recordFilter"></app-indicator-detail-files>
+                    </ng-template>
+                  </ngb-tab>  
+            </ng-template>
+          </ngb-tabset>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!--Modal Add Registry-->
+  <ng-template #addRegistry>
+      <div class="modal-header">
+        <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-plus-sign"></i> Agregar un nuevo Registro</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="addRegistryModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <app-indicator-add-registry></app-indicator-add-registry>
+  </ng-template>
