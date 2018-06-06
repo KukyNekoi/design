@@ -48,44 +48,18 @@
     <div class="container">
       <!--subtitle row ===================================== -->
       <div class="row">
-        <div class="col-md-12 pad-bt-60">
-          <div class="heading-block">
-            <table border="0">
-              <tr>
-                <td width="70%"></td>
-                <td style=""><span>Mostrar Gráfico</span></td>
-              </tr>
-              <tr>
-                <td width="70%">
-                    <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(datefilter)" data-toggle="modal" data-target="#modal-login">
-                      Filtrar por Fecha
-                    </button>
-                </td>
-                <td style="">
-                    <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
+        <div class="col-sm-8">
+          <br>
+          <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(datefilter)" data-toggle="modal" data-target="#modal-login">
             Filtrar por Fecha
           </button>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <span class="pull-rifgt">Mostrar Gráfico</span>
+        <div class="col-sm-4">
+          <div style="text-align:right;">Mostrar Gráfico</div>
+          <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
         </div>
       </div>
-      <div class="row">
-        <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
-      </div>
-
-
-
+<br>
 
       <!-- end row -->
       <!--graph row ======================================== -->
