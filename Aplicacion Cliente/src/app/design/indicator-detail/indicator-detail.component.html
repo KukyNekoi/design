@@ -37,7 +37,7 @@
 <section>
   <div>
         <ol class="breadcrumb shortcode">
-          <li><button class="buttonlink" >Modificar Meta</button></li>
+          <li><button class="buttonlink" (click)="openModalEditMeta(editmeta)">Modificar Meta</button></li>
           <li><button class="buttonlink" (click)="openModalEditIndicator(editindicator)">Modificar Indicador</button></li>
         </ol>
   </div>
@@ -174,7 +174,6 @@
     </div>
   </ng-template>
 
-
   <ng-template #editindicator>
       <div class="modal-header">
         <h4 class="modal-title pull-left">Modificar Indicador</h4>
@@ -198,4 +197,44 @@
       <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
         <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
       </div>
+    </ng-template>
+
+    <ng-template #editmeta>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Modificar Meta</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h4 class="head-project-title">Información Básica</h4>
+                <label>Año de Meta a Modificar</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                        aria-controls="dropdown-basic">2018 <span class="caret"></span>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
+                </ul>
+                </div>  
+                <!--End Dropdown-->
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <br>
+                <label>Número de Meta a Modificar</label>
+                <input type="number" placeholder="%%" class="form-control" id="name"/>
+                <div [hidden]="true" class="alert alert-danger">
+                    Número no puede estar vacío
+                </div>
+            </div>
+  
+        </div>
+        <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+          <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
+        </div>
     </ng-template>
