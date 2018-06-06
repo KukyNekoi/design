@@ -3,44 +3,69 @@
   <ng-template ngFor let-content [ngForOf]="recordFilter.content" let-i="index">
     <ngb-panel>
       <ng-template ngbPanelTitle>
-        <a fxLayout="row" class="clickeable">
-          <div fxFlex="30%">
-            {{content.name | uppercase}}
-            <br>
-            <span class="not-bold-but-italic">{{content.eventDate}}</span>
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-5 col-md-5">
+              {{content.name | uppercase}}
+              <br>
+              <span class="not-bold-but-italic"> ({{content.eventDate || "No Disponible"}})</span>
           </div>
-          <div fxFlex="42%">
-            <div class="value-box">{{content.value}}</div>
+          <div class="col-xs-12 col-sm-2 col-md-2">
+              <span class="not-bold-but-italic"><strong>{{content.value || "0"}}</strong> apariciones</span>
           </div>
-          <div fxFlex="15%">
-            <a class="btn btn-xs btn-primary btn-size-text">Modificar</a>
+          <div class="col-xs-10 col-sm-4 col-md-4">
+            <div class="pull-right">
+                <button class="btn btn-warning option-btn-sm" type="button">
+                  <i class="glyphicon glyphicon-pencil"></i><small class="hidden-xs hidden-sm"> Editar</small>
+                </button>
+                <button class="btn btn-danger option-btn-sm" type="button">
+                  <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs hidden-sm"> Eliminar</small>
+                </button>
+            </div>
           </div>
-          <div fxFlex="20%">
-            <a class="btn btn-xs btn-danger btn-size-text">Eliminar</a>
+          <div class="col-xs-2 col-sm-1 col-md-1">
+            <span class="pull-right glyphicon glyphicon-menu-down" style="font-size: 24px;"></span>
           </div>
-          <span fxFlex="3%" class="pull-right centered-vertical glyphicon glyphicon-menu-down" style="font-size: 24px;"></span>
-        </a>
+
+        </div>
+
+
       </ng-template>
       <ng-template ngbPanelContent>
         <ng-template ngFor let-resource [ngForOf]="content.resources" let-i="index">
-          <div fxLayout="row">
-            <div fxFlex="10%"> Fecha
-              <br> {{resource.rdate}} </div>
-            <div fxFlex="10%"> Tipo
-              <br> {{resource.rtype}} </div>
-            <div fxFlex="25%"> Descripción
-              <br> {{""}} </div>
-            <div fxFlex="20%"> Detalle
-              <br> {{resource.rlink}} </div>
-            <div fxFlex="10%">
-              <a class="btn btn-xs btn-primary">Ver</a>
+          <div class="row">
+
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Nombre
+              <br><strong>{{"" || "No Disponible"}}</strong>
             </div>
-            <div fxFlex="15%">
-              <a class="btn btn-xs btn-info btn-size-text">Descargar</a>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Fecha
+              <br><strong>{{resource.rdate || "No Disponible"}}</strong>
             </div>
-            <div fxFlex="10%">
-              <a class="btn btn-xs btn-danger btn-size-text">Eliminar</a>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Tipo
+              <br><strong>{{resource.rtype || "No Disponible"}}</strong>
             </div>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Detalle
+              <br><strong>{{resource.rlink || "No Disponible"}}</strong>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="pull-right">
+                <button class="btn btn-success option-btn-sm" type="button">
+                  <i class="glyphicon glyphicon-eye-open"></i><small class="hidden-xs hidden-sm"> Ver</small>
+                </button>
+                <button class="btn btn-warning option-btn-sm" type="button">
+                  <i class="glyphicon glyphicon-share"></i><small class="hidden-xs hidden-sm"> Descargar</small>
+                </button>
+                <button class="btn btn-danger option-btn-sm" type="button">
+                  <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs hidden-sm"> Eliminar</small>
+                </button>
+              </div>
+            </div>
+        
           </div>
           <hr>
         </ng-template>
