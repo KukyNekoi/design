@@ -34,14 +34,12 @@
     </div>
     <br>
     <div class="row">
-
-        <div class="col-xs-10 col-sm-8 col-md-9">
-          <h4 class="modal-h4 text-left">Documentación de respaldo</h4>
-        </div>
-
-        <div class="col-xs-2 col-sm-4 col-md-3">
-          <button class="btn modal-btn-sm btn-success pull-right " type="button" [attr.aria-expanded]="!newIsCollapsed" (click)="newIsCollapsed = !newIsCollapsed"><i class="glyphicon glyphicon-plus"></i><small class="hidden-xs"> Nuevo</small></button>
-        </div>
+        <div class="col-sm-12 col-md-12">
+          <h4 class="head-project-title">
+              Documentación de respaldo
+              <a class="btn btn-xs btn-primary pull-right" (click)="newIsCollapsed = !newIsCollapsed"><i class="glyphicon glyphicon-plus"></i>Nuevo</a>
+          </h4>
+        </div>        
     </div>
 
     <div class="row">
@@ -115,9 +113,9 @@
                       <td class="hidden-xs">Archivo</td>
                       <td class="pull-right">
                           <!--button class="btn btn-warning modal-btn-sm" type="button"> <i class="glyphicon glyphicon-share"></i><small class="hidden-xs"> Descargar</small></button-->
-                          <a class="btn btn-xs btn-warning" href="#.html"><i class="glyphicon glyphicon-share"></i>Descargar</a>
+                          <a class="btn btn-xs btn-warning" href="#.html">Descargar</a>
                           <!--button class="btn btn-danger modal-btn-sm" type="button"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Eliminar</small></button-->
-                          <a class="btn btn-xs btn-danger" href="#.html"><i class="glyphicon glyphicon-remove"></i>Eliminar</a>
+                          <a class="btn btn-xs btn-danger" href="#.html">Eliminar</a>
                         </td>
                     </tr>
 
