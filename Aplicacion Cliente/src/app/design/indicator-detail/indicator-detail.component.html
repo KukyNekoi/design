@@ -36,9 +36,9 @@
 <!-- end head-page-section -->
 <section>
   <div>
-        <ol class="breadcrumb shortcode" style="">
-          <li><a href="index.html">Modificar Meta</a></li>
-          <li><a href="index.html#portfolio-section">Modificar Indicador</a></li>
+        <ol class="breadcrumb shortcode">
+          <li><button class="buttonlink" (click)="openModalEditMeta(editmeta)">Modificar Meta</button></li>
+          <li><button class="buttonlink" (click)="openModalEditIndicator(editindicator)">Modificar Indicador</button></li>
         </ol>
   </div>
 </section>
@@ -48,44 +48,18 @@
     <div class="container">
       <!--subtitle row ===================================== -->
       <div class="row">
-        <div class="col-md-12 pad-bt-60">
-          <div class="heading-block">
-            <table border="0">
-              <tr>
-                <td width="70%"></td>
-                <td style=""><span>Mostrar Gráfico</span></td>
-              </tr>
-              <tr>
-                <td width="70%">
-                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
-                      Filtrar por Fecha
-                    </button>
-                </td>
-                <td style="">
-                    <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
-                </td>
-              </tr>
-            </table>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modal-login">
+        <div class="col-sm-8">
+          <br>
+          <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(datefilter)" data-toggle="modal" data-target="#modal-login">
             Filtrar por Fecha
           </button>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6">
-          <span class="pull-rifgt">Mostrar Gráfico</span>
+        <div class="col-sm-4">
+          <div style="text-align:right;">Mostrar Gráfico</div>
+          <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
         </div>
       </div>
-      <div class="row">
-        <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
-      </div>
-
-
-
+<br>
 
       <!-- end row -->
       <!--graph row ======================================== -->
@@ -150,4 +124,44 @@
         </button>
       </div>
       <app-indicator-add-registry></app-indicator-add-registry>
-  </ng-template>
+    </ng-template>
+
+    <ng-template #editmeta>
+        <div class="modal-header">
+          <h4 class="modal-title pull-left">Modificar Meta</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h4 class="head-project-title">Información Básica</h4>
+                <label>Año de Meta a Modificar</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
+                        aria-controls="dropdown-basic">2018 <span class="caret"></span>
+                </button>
+                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
+                    role="menu" aria-labelledby="button-basic">
+                  <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
+                  <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
+                </ul>
+                </div>  
+                <!--End Dropdown-->
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <br>
+                <label>Número de Meta a Modificar</label>
+                <input type="number" placeholder="%%" class="form-control" id="name"/>
+                <div [hidden]="true" class="alert alert-danger">
+                    Número no puede estar vacío
+                </div>
+            </div>
+  
+        </div>
+        <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+          <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
+        </div>
+    </ng-template>

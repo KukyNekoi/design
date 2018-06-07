@@ -2,6 +2,7 @@ import { Component, OnInit, TemplateRef } from '@angular/core';
 
 import { BsModalService } from 'ngx-bootstrap/modal';
 import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 
 @Component({
   selector: 'app-indicator-detail',
@@ -12,6 +13,9 @@ export class IndicatorDetailComponent implements OnInit {
   public data: any[];
   public filters: any[];
   public addRegistryModalRef: BsModalRef;
+  public modalDateFilter: BsModalRef;
+  public modalEditIndicator: BsModalRef;
+  public modalEditMeta: BsModalRef;
 
   constructor(private modalService: BsModalService) {
     this.data = [
@@ -127,10 +131,21 @@ export class IndicatorDetailComponent implements OnInit {
   }
 
   openModalAddRegistry(template: TemplateRef<any>) {
- 
     this.addRegistryModalRef = this.modalService.show(template, {
       backdrop: 'static'
     });
+  }
+
+  openModalDateFilter(template: TemplateRef<any>) {
+    this.modalDateFilter = this.modalService.show(template);
+  }
+
+  openModalEditIndicator(template: TemplateRef<any>) {
+    this.modalEditIndicator = this.modalService.show(template);
+  }
+
+  openModalEditMeta(template: TemplateRef<any>) {
+    this.modalEditMeta = this.modalService.show(template);
   }
 
   ngOnInit() {}

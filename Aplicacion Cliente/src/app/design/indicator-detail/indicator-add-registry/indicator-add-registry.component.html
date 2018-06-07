@@ -5,7 +5,7 @@
 
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
-          <h4 class="modal-h4 text-left">Información Básica</h4>
+          <h4 class="head-project-title">Información Básica</h4>
         </div>
 
         <div class="form-group col-xs-12 col-sm-8 col-md-8">
@@ -34,17 +34,16 @@
     </div>
     <br>
     <div class="row">
-
-        <div class="col-xs-10 col-sm-8 col-md-9">
-          <h4 class="modal-h4 text-left">Documentación de respaldo</h4>
-        </div>
-
-        <div class="col-xs-2 col-sm-4 col-md-3">
-          <button class="btn modal-btn-sm btn-success pull-right " type="button" [attr.aria-expanded]="!newIsCollapsed" (click)="newIsCollapsed = !newIsCollapsed"><i class="glyphicon glyphicon-plus"></i><small class="hidden-xs"> Nuevo</small></button>
-        </div>
+        <div class="col-sm-12 col-md-12">
+          <h4 class="head-project-title">
+              Documentación de respaldo
+              <a class="btn btn-xs btn-primary pull-right" (click)="newIsCollapsed = !newIsCollapsed"><i class="glyphicon glyphicon-plus"></i>Nuevo</a>
+          </h4>
+        </div>        
     </div>
 
     <div class="row">
+      <br>
       <form #addDocumentForm="ngForm">
         <div id="collapseBasic" [collapse]="newIsCollapsed" class="card-block col-md-12">
           <div class="well well-lg">
@@ -77,8 +76,10 @@
             
             <div class="row">
               <div class="pull-right">
-                <button class="btn btn-success modal-btn-sm" type="submit" [disabled]="!addDocumentForm.form.valid" [attr.aria-expanded]="!newIsCollapsed" (click)="addDocument()"> <i class="glyphicon glyphicon-ok"></i><small class="hidden-xs"> Agregar Documento</small></button>
-                <button class="btn btn-danger modal-btn-sm" type="button" [attr.aria-expanded]="!newIsCollapsed" (click)="newIsCollapsed = !newIsCollapsed"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Cancelar</small></button>
+                <!--button class="btn btn-success modal-btn-sm" type="submit" [disabled]="!addDocumentForm.form.valid" [attr.aria-expanded]="!newIsCollapsed" (click)="addDocument()"> <i class="glyphicon glyphicon-ok"></i><small class="hidden-xs"> Agregar Documento</small></button-->
+                <!--button class="btn btn-danger modal-btn-sm" type="button" [attr.aria-expanded]="!newIsCollapsed" (click)="newIsCollapsed = !newIsCollapsed"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Cancelar</small></button-->
+                <button type="button" class="btn btn-sm btn-clean-2" [attr.aria-expanded]="!newIsCollapsed" (click)="newIsCollapsed = !newIsCollapsed">Cancelar</button>
+                <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid" [attr.aria-expanded]="!newIsCollapsed" (click)="addDocument()">Aceptar</button>
               </div>
             </div>
 
@@ -111,9 +112,11 @@
                       <td>Holamundo.c</td>
                       <td class="hidden-xs">Archivo</td>
                       <td class="pull-right">
-                          <button class="btn btn-warning modal-btn-sm" type="button"> <i class="glyphicon glyphicon-share"></i><small class="hidden-xs"> Descargar</small></button>
-                          <button class="btn btn-danger modal-btn-sm" type="button"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Eliminar</small></button>
-                      </td>
+                          <!--button class="btn btn-warning modal-btn-sm" type="button"> <i class="glyphicon glyphicon-share"></i><small class="hidden-xs"> Descargar</small></button-->
+                          <a class="btn btn-xs btn-warning" href="#.html">Descargar</a>
+                          <!--button class="btn btn-danger modal-btn-sm" type="button"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Eliminar</small></button-->
+                          <a class="btn btn-xs btn-danger" href="#.html">Eliminar</a>
+                        </td>
                     </tr>
 
                 </tbody>
@@ -125,10 +128,26 @@
       </div>
     </div>
 
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <h4 class="head-project-title">Tipo de registro</h4>
+          </div>
+        <form class="col-xs-12 col-sm-12 col-md-12">
+          <label class="col-md-6" style="text-align: center;">
+            <input type="radio" name="optradio">Diagnostico
+          </label>
+          <label class="col-md-6" style="text-align: center;">
+            <input type="radio" name="optradio">Intervencion
+          </label>
+        </form>
+    </div>
+
   </div>
 
   <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
-    <button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button>
+    <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+    <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+    <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
   </div>
     
 </form>
