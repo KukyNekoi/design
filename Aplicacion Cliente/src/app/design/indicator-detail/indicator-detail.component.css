@@ -31,3 +31,9 @@
     color: #47b475;
     border: none;
 }
+
+.btn-size-text {
+    text-transform: uppercase!important;
+    text-align: center;
+    color: #ffffff!important;
+  }
