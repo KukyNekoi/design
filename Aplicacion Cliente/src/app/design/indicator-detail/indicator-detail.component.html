@@ -126,8 +126,9 @@
     <app-indicator-add-registry></app-indicator-add-registry>
   </ng-template>
 
+  <!--Modal date filter-->
   <ng-template #datefilter>
-    <div class="modal-header">
+    <div class="modal-header" tabindex="-1">
       <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-calendar"></i> Filtrar por Fecha</h4>
       <button type="button" class="close pull-right" aria-label="Close" (click)="modalDateFilter.hide()">
         <span aria-hidden="true">&times;</span>
@@ -170,12 +171,14 @@
       </div>
     </div>
     <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
-      <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Filtrar</button>
+      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+      <button type="submit" class="btn btn-sm btn-primary">Filtrar</button>
     </div>
   </ng-template>
 
+  <!--Modal Edit Indicator-->
   <ng-template #editindicator>
-      <div class="modal-header">
+      <div class="modal-header" tabindex="-1">
         <h4 class="modal-title pull-left">Modificar Indicador</h4>
         <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
           <span aria-hidden="true">&times;</span>
@@ -195,14 +198,16 @@
 
       </div>
       <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
-        <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
       </div>
     </ng-template>
 
+    <!--Modal Edit Meta-->
     <ng-template #editmeta>
-        <div class="modal-header">
+        <div class="modal-header" tabindex="-1">
           <h4 class="modal-title pull-left">Modificar Meta</h4>
-          <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
+          <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditMeta.hide()">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
@@ -232,9 +237,9 @@
                     Número no puede estar vacío
                 </div>
             </div>
-  
         </div>
         <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
-          <button type="submit" class="btn btn-success pull-right"><i class="glyphicon glyphicon-ok"></i> Aceptar</button>
+          <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+          <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
         </div>
     </ng-template>
