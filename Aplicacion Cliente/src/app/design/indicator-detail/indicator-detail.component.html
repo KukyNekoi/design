@@ -189,7 +189,7 @@
               <h4 class="head-project-title">Información Básica</h4>
           </div>
           <div class="form-group col-sm-12 col-md-12">
-              <label>Nombre del Indicador</label>
+              <p>Nombre del Indicador</p>
               <input type="text" placeholder="Nº de Nuevas entidades internacionales vinculadas al CET" class="form-control" id="name"/>
               <div [hidden]="true" class="alert alert-danger">
                   Nombre no puede estar vacío
@@ -212,22 +212,44 @@
           </button>
         </div>
         <div class="modal-body row">
-            <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="col-md-12">
                 <h4 class="head-project-title">Información Básica</h4>
-                <label>Año de Meta a Modificar</label><br>
-                <!--Dropdown-->
-                <div class="btn-group" dropdown>
-                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                        aria-controls="dropdown-basic">2018 <span class="caret"></span>
-                </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                    role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
-                </ul>
-                </div>  
-                <!--End Dropdown-->
+                
+                <div class="col-sm-6 text-center">
+                  <p>Año de Meta a Modificar</p>
+                  <!--Dropdown-->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar año
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">2019</a></li>
+                      <li><a href="#">2020</a></li>
+                      <li><a href="#">2021</a></li>
+                    </ul>
+                  </div>  
+                  <!--End Dropdown-->
+                </div>
+                
+                <div class="col-sm-6 text-center">
+                  <p>Mes de Meta a Modificar</p>
+                  <!--Dropdown-->
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar mes 
+                      <span class="caret"></span>
+                    </button>
+  
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Enero</a></li>
+                      <li><a href="#">Febrero</a></li>
+                      <li><a href="#">Marzo</a></li>
+                    </ul>
+                  </div>  
+                  <!--End Dropdown-->
+                </div>
+                
             </div>
             <div class="form-group col-sm-12 col-md-12">
                 <br>
