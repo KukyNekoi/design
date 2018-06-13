@@ -37,8 +37,8 @@
 <section>
   <div>
         <ol class="breadcrumb shortcode">
-          <li><button class="buttonlink" (click)="openModalEditMeta(editmeta)">Modificar Meta</button></li>
-          <li><button class="buttonlink" (click)="openModalEditIndicator(editindicator)">Modificar Indicador</button></li>
+          <li><button class="buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button></li>
+          <li><button class="buttonlink" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button></li>
         </ol>
   </div>
 </section>
@@ -50,7 +50,7 @@
       <div class="row">
         <div class="col-sm-8">
           <br>
-          <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(datefilter)" data-toggle="modal" data-target="#modal-login">
+          <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(dateFilter)" data-toggle="modal">
             Filtrar por Fecha
           </button>
         </div>
@@ -59,7 +59,7 @@
           <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
         </div>
       </div>
-<br>
+    <br>
 
       <!-- end row -->
       <!--graph row ======================================== -->
@@ -108,11 +108,9 @@
                   </ngb-tab>  
             </ng-template>
           </ngb-tabset>
-
         </div>
       </div>
     </div>
-  
 </section>
 
   <!--Modal Add Registry-->
@@ -127,10 +125,10 @@
   </ng-template>
 
   <!--Modal date filter-->
-  <ng-template #datefilter>
+  <ng-template #dateFilter>
     <div class="modal-header" tabindex="-1">
       <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-calendar"></i> Filtrar por Fecha</h4>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalDateFilter.hide()">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="dateFilterModalRef.hide()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -138,23 +136,23 @@
   </ng-template>
 
   <!--Modal Edit Indicator-->
-  <ng-template #editindicator>
-      <div class="modal-header" tabindex="-1">
-        <h4 class="modal-title pull-left">Modificar Indicador</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <app-indicator-edit-indicator></app-indicator-edit-indicator>
-    </ng-template>
+  <ng-template #editIndicator>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Modificar Indicador</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="editIndicatorModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-edit-indicator></app-indicator-edit-indicator>
+  </ng-template>
 
-    <!--Modal Edit Meta-->
-    <ng-template #editmeta>
-        <div class="modal-header" tabindex="-1">
-          <h4 class="modal-title pull-left">Modificar Meta</h4>
-          <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditMeta.hide()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <app-indicator-edit-meta></app-indicator-edit-meta>
-    </ng-template>
+  <!--Modal Edit Meta-->
+  <ng-template #editMeta>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Modificar Meta</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="editMetaModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-edit-meta></app-indicator-edit-meta>
+  </ng-template>
