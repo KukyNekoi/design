@@ -1,8 +1,11 @@
 <div class="filter-shop-bar">
-  <span>Mostrar Gráfico</span>
-  <select style="padding:10px;">
-      <ng-template ngFor let-option [ngForOf]="graph.option" let-i="index">
-      <option>{{option.name}}</option>
-      </ng-template>
-  </select>
+  <div ngbDropdown class="d-inline-block">
+      <button class="btn btn-primary pull-right" id="dropdownBasic1" ngbDropdownToggle>Tipo de gráfico <i class="fa fa-caret-down"></i> </button>             
+      <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1"> 
+        <ng-template ngFor let-option [ngForOf]="graph.option" let-i="index">         
+          <li><a>{{option.name}}</a></li>
+        </ng-template>
+      </ul>
+  </div>
 </div> <!-- end filter-shop-bar -->
+

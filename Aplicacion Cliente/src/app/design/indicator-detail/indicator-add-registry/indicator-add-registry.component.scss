@@ -29,18 +29,13 @@
   margin: 1em;
 }
 
-.pull-right .centered-vertical{
-  // padding-top: 30px;
-  // padding-bottom: 30px;
-}
-
 .clickeable{
   display:block;
 }
 
 .value-box {
   height: 1.8em;
-  //background: #47b475;
+  background: #47b475;
   width: 3em;
   padding: 1px;
   text-align: center;
@@ -51,14 +46,23 @@
   font-style: italic;
 }
 
-.option-btn-sm {
-  padding: 10px 20px;
-  font-size: 12px;
-  border-radius: 0px;
+.modal-h4 {
+  margin-top: 0px;
 }
 
-.btn-size-text {
-  text-transform: uppercase!important;
-  text-align: center;
-  color: #ffffff!important;
+.modal-table-responsive {
+  min-height: .01%;
+}
+
+.modal-btn-sm {
+  padding: 10px 20px;
+  font-size: 12px;
+  border-radius: 2px;
+}
+
+.modal-btn-group {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  
 }
