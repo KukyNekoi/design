@@ -1,0 +1,19 @@
+<form #editIndicatorForm="ngForm">
+  <div class="modal-body row">
+      <div class="col-xs-12 col-sm-12 col-md-12">
+          <h4 class="head-project-title">Información Básica</h4>
+      </div>
+      <div class="form-group col-sm-12 col-md-12">
+          <p>Nombre del Indicador</p>
+          <input type="text" placeholder="Nº de Nuevas entidades internacionales vinculadas al CET" class="form-control" id="name"/>
+          <div [hidden]="true" class="alert alert-danger">
+              Nombre no puede estar vacío
+          </div>
+      </div>
+
+  </div>
+  <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+    <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+    <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
+  </div>
+</form>
