@@ -3,35 +3,59 @@
   <ng-template ngFor let-content [ngForOf]="recordFilter.content" let-i="index">
     <ngb-panel>
       <ng-template ngbPanelTitle>
-        <a fxLayout="row" class="clickeable">
-          <div fxFlex="40%">
-            {{content.name | uppercase}}
-            <br>
-            <span class="not-bold-but-italic">{{content.eventDate}}</span>
+
+        <div class="row">
+
+          <div class="col-xs-12 col-sm-5 col-md-5">
+              {{content.name | uppercase}}
+              <br>
+              <span class="not-bold-but-italic"> ({{content.eventDate || "No Disponible"}})</span>
           </div>
-          <div fxFlex="57%">
-            <div class="value-box">{{content.value}}</div>
+          <div class="col-xs-12 col-sm-2 col-md-2">
+              <span class="not-bold-but-italic"><strong>{{content.value || "0"}}</strong> apariciones</span>
           </div>
-          <span fxFlex="3%" class="pull-right centered-vertical glyphicon glyphicon-menu-down" style="font-size: 24px;"></span>
-        </a>
+          <div class="col-xs-10 col-sm-4 col-md-4">
+            <div class="pull-right">
+                <button class="btn btn-xs btn-warning " type="button">Editar</button>
+                <button class="btn btn-xs btn-danger" type="button">Eliminar</button>
+            </div>
+          </div>
+          <div class="col-xs-2 col-sm-1 col-md-1">
+            <span class="pull-right glyphicon glyphicon-menu-down" style="font-size: 24px;"></span>
+          </div>
+
+        </div>
+
+
       </ng-template>
       <ng-template ngbPanelContent>
         <ng-template ngFor let-resource [ngForOf]="content.resources" let-i="index">
-          <div fxLayout="row">
-            <div fxFlex="21%"> Fecha
-              <br> {{resource.rdate}} </div>
-            <div fxFlex="21%"> Tipo
-              <br> {{resource.rtype}} </div>
-            <div fxFlex="21%"> Descripción
-              <br> {{""}} </div>
-            <div fxFlex="21%"> Detalle
-              <br> {{resource.rlink}} </div>
-            <div fxFlex="8%">
-              <a class="btn btn-xs btn-primary">Ver</a>
+          <div class="row">
+
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Nombre
+              <br><strong>{{"" || "No Disponible"}}</strong>
             </div>
-            <div fxFlex="8%">
-              <a class="btn btn-xs btn-info">Descargar</a>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Fecha
+              <br><strong>{{resource.rdate || "No Disponible"}}</strong>
             </div>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Tipo
+              <br><strong>{{resource.rtype || "No Disponible"}}</strong>
+            </div>
+            <div class="col-xs-6 col-sm-2 col-md-2">
+              Detalle
+              <br><strong>{{resource.rlink || "No Disponible"}}</strong>
+            </div>
+            <div class="col-xs-12 col-sm-4 col-md-4">
+              <div class="pull-right">
+                <button class="btn btn-xs btn-success" type="button">Ver</button>
+                <button class="btn btn-xs btn-info" type="button">Descargar</button>
+                <button class="btn btn-xs btn-danger" type="button">Eliminar</button>
+              </div>
+            </div>
+        
           </div>
           <hr>
         </ng-template>
