@@ -16,6 +16,7 @@ export class IndicatorDetailComponent implements OnInit {
   public dateFilterModalRef: BsModalRef;
   public editIndicatorModalRef: BsModalRef;
   public editMetaModalRef: BsModalRef;
+  public alertModalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) {
     this.data = [
@@ -145,6 +146,10 @@ export class IndicatorDetailComponent implements OnInit {
 
   openModalEditMeta(template: TemplateRef<any>) {
     this.editMetaModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+
+  openModalAlert(template: TemplateRef<any>) {
+    this.alertModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
   ngOnInit() {}

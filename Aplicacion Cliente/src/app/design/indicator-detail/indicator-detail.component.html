@@ -39,6 +39,7 @@
         <ol class="breadcrumb shortcode">
           <li><button class="buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button></li>
           <li><button class="buttonlink" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button></li>
+          <li><button class="buttonlink" (click)="openModalAlert(alert)" data-toggle="modal">Alerta</button></li>
         </ol>
   </div>
 </section>
@@ -54,8 +55,8 @@
             Filtrar por Fecha
           </button>
         </div>
-        <div class="col-sm-4">
-          <div style="text-align:right;">Mostrar Gráfico</div>
+        <div class="col-sm-4" style="text-align:right;">
+          <div >Mostrar Gráfico</div>
           <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
         </div>
       </div>
@@ -155,4 +156,19 @@
       </button>
     </div>
     <app-indicator-edit-meta></app-indicator-edit-meta>
+  </ng-template>
+
+  <!--Modal Alerta-->
+  <ng-template #alert>
+    <div class="modal-header-success modal-header " tabindex="-1">
+      <div class="modal-title title-alert pull-left">
+        <i _ngcontent-c3="" class="glyphicon glyphicon-alert"></i>
+        &nbsp;
+        Alerta
+      </div>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="alertModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-alert></app-indicator-alert>
   </ng-template>
