@@ -1,13 +1,13 @@
-<section>
+<section onload="function()">
   <div id="statistic-section" class="statistic-bg" data-stellar-background-ratio="0">
     <div class="container">
       <div class="row">
         <ng-template ngFor let-detail [ngForOf]="result.details" let-i="index">
           <!-- end col-xs-6 col-sm-3 col-md-3 -->
           <div class="indicator-block col-xs-12 col-sm-6 col-md-4">
-            <a class="active" href="resultgeneral.html">
-              <div class="services-content">
-                <div class="statistic-percent" [attr.data-perc]="'detail.value'">
+            <a class="active" href="">
+              <div class="services-content vertical-size-base">
+                <div class="statistic-percent vertical-size" [attr.data-perc]="'detail.value'">
                   <div class="fact">
                     <span class="percentfactor">{{detail.value}}</span>
                     <p>{{detail.title}}</p>
