@@ -18,9 +18,10 @@
 }
 
 .shortcode {
-    background-color: #fcfcfc!important;
+    background-color: #222222!important;
     text-align:center; 
     border-radius:0;
+    padding: 10px;
 }
 .upcode {
     background-color: #fcfcfc!important;
@@ -36,9 +37,11 @@
 }
 
 .buttonlink {
-    background-color: transparent!important;
-    color: #47b475;
-    border: none;
+    background-color: #fcfcfc!important;
+}
+.buttonlink:hover {
+    background-color: #47b475!important;
+    color: #fcfcfc;
 }
 
 .btn-size-text {
