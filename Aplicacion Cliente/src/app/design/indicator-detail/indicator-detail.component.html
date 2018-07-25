@@ -144,7 +144,7 @@
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4" style="margin-top: 5px;">
             <div class="pull-right">
-              <button class="btn btn-xs btn-warning " type="button">Editar</button>
+              <button class="btn btn-xs btn-warning " type="button" (click)="openmodaleditDocument(editDocument)">Editar</button>
               <button class="btn btn-xs btn-success" type="button">Ver</button>
               <button class="btn btn-xs btn-info" type="button">Descargar</button>
               <button class="btn btn-xs btn-danger" type="button">Eliminar</button>
@@ -202,3 +202,55 @@
     </div>
     <app-indicator-edit-meta></app-indicator-edit-meta>
   </ng-template>
+
+  <!--Modal Edit Document-->
+  <ng-template #editDocument>
+      <div class="modal-header" tabindex="-1">
+        <h4 class="modal-title pull-left">Modificar Documento</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="editDocumentModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <h4 class="head-project-title">Información Básica</h4>
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre" class="form-control" id="name" required />
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Empresa</label>
+                <input type="text" placeholder="Nombre" class="form-control" id="empresa" required />
+            </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                <label for="date">Fecha Añadido</label>
+                <input type="text" placeholder="Ingrese fecha" class="form-control" id="date" required bsDatepicker />
+              </div>
+              <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                  <label for="date">Visita Técnica</label>
+                  <input type="text" placeholder="Ingrese fecha de Visita Técnica" class="form-control" id="date" required bsDatepicker />
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Detalle</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle del Documento"></textarea>
+            </div>
+            <div class="col-sm-12 col-md-12">
+              <h4 class="head-project-title">
+                    Documentación de respaldo
+              </h4>
+            </div>
+            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                <label for="quantity">Archivo de respaldo</label>
+                <input type="file" class="form-control" id="file-doc" required />
+            </div>    
+
+        </div>
+      </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+      </div>
+    </ng-template>
