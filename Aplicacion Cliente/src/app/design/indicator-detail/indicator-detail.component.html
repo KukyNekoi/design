@@ -47,6 +47,7 @@
   <div class="shortcode">
     <button class="btn btn-sm btn-clean-2 buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button>
     <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button>
+    <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalSesion(iniciarsesion)" data-toggle="modal">Iniciar Sesion</button>
   </div>
 </section>
 <!-- space ================================================== -->
@@ -276,6 +277,44 @@
             </div>    
 
         </div>
+      </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+      </div>
+    </ng-template>
+
+    <!--Sesion-->
+    <ng-template #iniciarsesion>
+      <div class="modal-header" tabindex="-1">
+        <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-user center "></i></h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="sesionModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                  <img src="/assets/images/thinkagro.png" style="width: 100px;" class="center">
+              </div>
+              <div class="pad-bt-60"></div>
+              <div class=" form-group col-xs-12 col-sm-12 col-md-12">
+                  <h2 class="text-center">Iniciar Sesión</h2>
+              </div>
+              <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre de Usuario</label>
+                <input type="text" placeholder="Nombre" class="form-control" id="name" required />
+            </div>
+              <div class="form-group col-sm-12 col-md-12">
+                <label>Contraseña</label>
+                <input type="password" placeholder="******" class="form-control" id="name"/>
+              </div>
+
+              <div class="form-group col-sm-12 col-md-12">
+                <p class="text-center">¿Olvidó su Contraseña? que bueno</p>
+              </div>
+          </div>        
       </div>
       <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
         <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->

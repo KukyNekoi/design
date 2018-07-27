@@ -17,6 +17,7 @@ export class IndicatorDetailComponent implements OnInit {
   public editIndicatorModalRef: BsModalRef;
   public editMetaModalRef: BsModalRef;
   public editDocumentModalRef: BsModalRef;
+  public sesionModalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) {
     this.data = [
@@ -150,6 +151,10 @@ export class IndicatorDetailComponent implements OnInit {
 
   openmodaleditDocument(template: TemplateRef<any>) {
     this.editDocumentModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+  
+  openModalSesion(template: TemplateRef<any>) {
+    this.sesionModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
   ngOnInit() {}
