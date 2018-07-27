@@ -11,6 +11,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 export class IndicatorDetailFilesComponent implements OnInit {
   @Input() public recordFilter: any;
   public editBigDocumentModalRef: BsModalRef;
+  public addDocumentModalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) {
     console.log(this.recordFilter);
@@ -21,6 +22,10 @@ export class IndicatorDetailFilesComponent implements OnInit {
 
   openmodaleditBigDocument(template: TemplateRef<any>) {
     this.editBigDocumentModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+
+  openmodaladdDocument(template: TemplateRef<any>) {
+    this.addDocumentModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
 }
