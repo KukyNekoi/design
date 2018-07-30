@@ -1,3 +1,12 @@
+<section>
+  <div>
+        <ol class="breadcrumb upcode">
+          <li><a href="">Home</a></li>
+          <li><a href="http://localhost:4200/indicator">Indicadores</a></li>
+          <li>Nº de Nuevas entidades internacionales vinculadas al CET</li>
+        </ol>
+  </div>
+</section>
 <!-- Head page section================================================== -->
 <section>
   <div id="head-page-section" class="l-grey-bg head-page-section">
@@ -37,8 +46,9 @@
 <section>
   <div>
         <ol class="breadcrumb shortcode">
-          <li><button class="buttonlink" (click)="openModalEditMeta(editmeta)">Modificar Meta</button></li>
-          <li><button class="buttonlink" (click)="openModalEditIndicator(editindicator)">Modificar Indicador</button></li>
+          <li><button class="buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button></li>
+          <li><button class="buttonlink" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button></li>
+          <li><button class="buttonlink" (click)="openModalAlert(alert)" data-toggle="modal">Alerta</button></li>
         </ol>
   </div>
 </section>
@@ -50,16 +60,16 @@
       <div class="row">
         <div class="col-sm-8">
           <br>
-          <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(datefilter)" data-toggle="modal" data-target="#modal-login">
+          <button type="button" class="btn btn-primary btn-lg" (click)="openModalDateFilter(dateFilter)" data-toggle="modal">
             Filtrar por Fecha
           </button>
         </div>
-        <div class="col-sm-4">
-          <div style="text-align:right;">Mostrar Gráfico</div>
+        <div class="col-sm-4" style="text-align:right;">
+          <div >Mostrar Gráfico</div>
           <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
         </div>
       </div>
-<br>
+    <br>
 
       <!-- end row -->
       <!--graph row ======================================== -->
@@ -108,11 +118,48 @@
                   </ngb-tab>  
             </ng-template>
           </ngb-tabset>
-
         </div>
       </div>
+
+       <!-- Un solo documento -->
+       <div class="wide-border-promo-box promo-box pad-sec-40" style="padding: 20px;">
+        <div class="row">
+          <div class="col-md-12">
+                <h5 class="fixh5"><strong>servicio de evaluación técnica de integración de sistemas independientes</strong></h5>
+          </div><!--End col-md-12-->          
+        </div> <!-- end row -->
+        <div class="row">
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Empresa
+            <br><strong class="theme-color">Berries San Clemente</strong>
+          </div>
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Añadido
+            <br><strong>dd-mm-aaaa</strong>
+          </div>
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Visita Técnica
+            <br><strong>dd-mm-aaaa</strong>
+          </div>
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Detalle
+            <br><strong>#</strong>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4" style="margin-top: 5px;">
+            <div class="pull-right">
+              <button class="btn btn-xs btn-warning " type="button" (click)="openmodaleditDocument(editDocument)">Editar</button>
+              <button class="btn btn-xs btn-success" type="button">Ver</button>
+              <button class="btn btn-xs btn-info" type="button">Descargar</button>
+              <button class="btn btn-xs btn-danger" type="button">Eliminar</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!-- end Un solo documento -->
+
+      <div class="pad-bt-60"></div>
+
     </div>
-  
 </section>
 
   <!--Modal Add Registry-->
@@ -127,119 +174,128 @@
   </ng-template>
 
   <!--Modal date filter-->
-  <ng-template #datefilter>
+  <ng-template #dateFilter>
     <div class="modal-header" tabindex="-1">
       <h4 class="modal-title pull-left"><i class="glyphicon glyphicon-calendar"></i> Filtrar por Fecha</h4>
-      <button type="button" class="close pull-right" aria-label="Close" (click)="modalDateFilter.hide()">
+      <button type="button" class="close pull-right" aria-label="Close" (click)="dateFilterModalRef.hide()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
-    <div class="modal-body">
-      <div class="row">
-        <div class="col-sm-6">
-          <div class="textfilter">Años a Calcular</div>
-          <!--Dropdown-->
-          <div class="btn-group" dropdown>
-              <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                      aria-controls="dropdown-basic">2018 <span class="caret"></span>
-              </button>
-              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                  role="menu" aria-labelledby="button-basic">
-                <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
-              </ul>
-            </div>  
-            <!--End Dropdown-->
-        </div>
-        <div class="col-sm-6">
-          <div class="textfilter">Meses a Calcular</div>
-          <!--Dropdown-->
-          <div class="btn-group" dropdown>
-              <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                      aria-controls="dropdown-basic">Todos los meses <span class="caret"></span>
-              </button>
-              <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                  role="menu" aria-labelledby="button-basic">
-                <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
-                <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
-              </ul>
-            </div>  
-            <!--End Dropdown-->
-        </div>
-      </div>
-    </div>
-    <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
-      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
-      <button type="submit" class="btn btn-sm btn-primary">Filtrar</button>
-    </div>
+    <app-indicator-date-filter></app-indicator-date-filter>
   </ng-template>
 
   <!--Modal Edit Indicator-->
-  <ng-template #editindicator>
+  <ng-template #editIndicator>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Modificar Indicador</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="editIndicatorModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-edit-indicator></app-indicator-edit-indicator>
+  </ng-template>
+
+  <!--Modal Edit Meta-->
+  <ng-template #editMeta>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Modificar Meta</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="editMetaModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-edit-meta></app-indicator-edit-meta>
+  </ng-template>
+
+  <!--Modal Alerta-->
+  <ng-template #alert>
+    <div class="modal-header-success modal-header " tabindex="-1">
+      <div class="modal-title title-alert pull-left">
+        <i _ngcontent-c3="" class="glyphicon glyphicon-alert"></i>
+        &nbsp;
+        Alerta
+      </div>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="alertModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-alert></app-indicator-alert>
+  </ng-template>
+  <!--Modal Edit Document-->
+  <ng-template #editDocument>
       <div class="modal-header" tabindex="-1">
-        <h4 class="modal-title pull-left">Modificar Indicador</h4>
-        <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditIndicator.hide()">
+        <h4 class="modal-title pull-left">Modificar Documento</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="editDocumentModalRef.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body row">
-          <div class="col-xs-12 col-sm-12 col-md-12">
-              <h4 class="head-project-title">Información Básica</h4>
-          </div>
-          <div class="form-group col-sm-12 col-md-12">
-              <label>Nombre del Indicador</label>
-              <input type="text" placeholder="Nº de Nuevas entidades internacionales vinculadas al CET" class="form-control" id="name"/>
-              <div [hidden]="true" class="alert alert-danger">
-                  Nombre no puede estar vacío
-              </div>
-          </div>
-
-      </div>
-      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
-        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
-        <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
-      </div>
-    </ng-template>
-
-    <!--Modal Edit Meta-->
-    <ng-template #editmeta>
-        <div class="modal-header" tabindex="-1">
-          <h4 class="modal-title pull-left">Modificar Meta</h4>
-          <button type="button" class="close pull-right" aria-label="Close" (click)="modalEditMeta.hide()">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body row">
+      <div class="modal-body">
+        <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
-                <h4 class="head-project-title">Información Básica</h4>
-                <label>Año de Meta a Modificar</label><br>
-                <!--Dropdown-->
-                <div class="btn-group" dropdown>
-                <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle"
-                        aria-controls="dropdown-basic">2018 <span class="caret"></span>
-                </button>
-                <ul id="dropdown-basic" *dropdownMenu class="dropdown-menu"
-                    role="menu" aria-labelledby="button-basic">
-                  <li role="menuitem"><a class="dropdown-item" href="#">2019</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">2020</a></li>
-                  <li role="menuitem"><a class="dropdown-item" href="#">2021</a></li>
-                </ul>
-                </div>  
-                <!--End Dropdown-->
+              <h4 class="head-project-title">Información Básica</h4>
             </div>
             <div class="form-group col-sm-12 col-md-12">
-                <br>
-                <label>Número de Meta a Modificar</label>
-                <input type="number" placeholder="%%" class="form-control" id="name"/>
-                <div [hidden]="true" class="alert alert-danger">
-                    Número no puede estar vacío
-                </div>
+                <label>Nombre</label>
+                <input type="text" placeholder="Nombre" class="form-control" id="name" required />
             </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Empresa</label>
+                <input type="text" placeholder="Nombre" class="form-control" id="empresa" required />
+            </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                <label for="date">Fecha Añadido</label>
+                <input type="text" placeholder="Ingrese fecha" class="form-control" id="date" required bsDatepicker />
+              </div>
+              <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                  <label for="date">Visita Técnica</label>
+                  <input type="text" placeholder="Ingrese fecha de Visita Técnica" class="form-control" id="date" required bsDatepicker />
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Detalle</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle del Documento"></textarea>
+            </div>
+            <div class="col-sm-12 col-md-12">
+              <h4 class="head-project-title">
+                    Documentación de respaldo
+              </h4>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <div class="modal-table-responsive">
+                    <table class="table">
+                      <thead>
+                        <tr class="active">
+                          <th colspan="1">Nombre</th>
+                          <th class="hidden-xs" colspan="1">Tipo</th>
+                          <th colspan="2"> </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+      
+                        <!--
+                          Esta sección contiene uno de los documentos agregados
+                        -->
+                          <tr>
+                            <td>Holamundo.c</td>
+                            <td class="hidden-xs">Archivo</td>
+                            <td class="pull-right">
+                                <!--button class="btn btn-danger modal-btn-sm" type="button"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Eliminar</small></button-->
+                                <a class="btn btn-xs btn-danger" href="#.html">Eliminar</a>
+                              </td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </div>
+
+            <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                <label for="quantity">Archivo de respaldo</label>
+                <input type="file" class="form-control" id="file-doc" required />
+            </div>    
+
         </div>
-        <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
-          <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
-          <button type="submit" class="btn btn-sm btn-primary">Aceptar</button>
-        </div>
+      </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+      </div>
     </ng-template>

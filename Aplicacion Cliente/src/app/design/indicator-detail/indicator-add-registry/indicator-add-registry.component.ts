@@ -19,8 +19,8 @@ export class IndicatorAddRegistryComponent implements OnInit {
   ngOnInit() {
   }
 
-  addDocument(){
-    //agregar métodos y cosas para cargar información
-    this.newIsCollapsed=!this.newIsCollapsed;
+  addDocument() {
+    // agregar métodos y cosas para cargar información
+    this.newIsCollapsed = !this.newIsCollapsed;
   }
 }

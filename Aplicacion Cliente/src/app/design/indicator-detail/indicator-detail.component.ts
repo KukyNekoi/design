@@ -13,9 +13,11 @@ export class IndicatorDetailComponent implements OnInit {
   public data: any[];
   public filters: any[];
   public addRegistryModalRef: BsModalRef;
-  public modalDateFilter: BsModalRef;
-  public modalEditIndicator: BsModalRef;
-  public modalEditMeta: BsModalRef;
+  public dateFilterModalRef: BsModalRef;
+  public editIndicatorModalRef: BsModalRef;
+  public editMetaModalRef: BsModalRef;
+  public alertModalRef: BsModalRef;
+  public editDocumentModalRef: BsModalRef;
 
   constructor(private modalService: BsModalService) {
     this.data = [
@@ -130,22 +132,29 @@ export class IndicatorDetailComponent implements OnInit {
 
   }
 
+  // {backdrop: 'static'} hace que al presionar fuera del modal no se cierre
   openModalAddRegistry(template: TemplateRef<any>) {
-    this.addRegistryModalRef = this.modalService.show(template, {
-      backdrop: 'static'
-    });
+    this.addRegistryModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
   openModalDateFilter(template: TemplateRef<any>) {
-    this.modalDateFilter = this.modalService.show(template);
+    this.dateFilterModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
   openModalEditIndicator(template: TemplateRef<any>) {
-    this.modalEditIndicator = this.modalService.show(template);
+    this.editIndicatorModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
   openModalEditMeta(template: TemplateRef<any>) {
-    this.modalEditMeta = this.modalService.show(template);
+    this.editMetaModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+
+  openModalAlert(template: TemplateRef<any>) {
+    this.alertModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+
+  openmodaleditDocument(template: TemplateRef<any>) {
+    this.editDocumentModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
   ngOnInit() {}

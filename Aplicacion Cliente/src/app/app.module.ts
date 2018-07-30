@@ -23,6 +23,10 @@ import { ResultDisplayComponent } from './design/result-home/result-display/resu
 import { IndicatorDisplayComponent } from './design/indicator-home/indicator-display/indicator-display.component';
 import { IndicatorHomeComponent } from './design/indicator-home/indicator-home.component';
 import { IndicatorAddRegistryComponent } from './design/indicator-detail/indicator-add-registry/indicator-add-registry.component';
+import { IndicatorEditMetaComponent } from './design/indicator-detail/indicator-edit-meta/indicator-edit-meta.component';
+import { IndicatorEditIndicatorComponent } from './design/indicator-detail/indicator-edit-indicator/indicator-edit-indicator.component';
+import { IndicatorDateFilterComponent } from './design/indicator-detail/indicator-date-filter/indicator-date-filter.component';
+import { IndicatorAlertComponent } from './design/indicator-detail/indicator-alert/indicator-alert.component';
 
 
 @NgModule({
@@ -39,7 +43,11 @@ import { IndicatorAddRegistryComponent } from './design/indicator-detail/indicat
     IndicatorGraphOptionComponent,
     IndicatorDetailFilesComponent,
     LoginComponent,
-    IndicatorAddRegistryComponent
+    IndicatorAddRegistryComponent,
+    IndicatorEditMetaComponent,
+    IndicatorEditIndicatorComponent,
+    IndicatorDateFilterComponent,
+    IndicatorAlertComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -58,7 +66,8 @@ import { IndicatorAddRegistryComponent } from './design/indicator-detail/indicat
     }, {
       path: 'result',  component: ResultHomeComponent
     }]),
-    FlexLayoutModule
+    FlexLayoutModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
