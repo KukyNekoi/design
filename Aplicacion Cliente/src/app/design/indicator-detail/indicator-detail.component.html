@@ -1,10 +1,10 @@
 <section>
   <div>
-        <ol class="breadcrumb upcode">
-          <li><a href="">Home</a></li>
-          <li><a href="http://localhost:4200/indicator">Indicadores</a></li>
-          <li>Nº de Nuevas entidades internacionales vinculadas al CET</li>
-        </ol>
+    <ol class="breadcrumb upcode">
+      <li><a href="">Home</a></li>
+      <li><a href="http://localhost:4200/indicator">Indicadores</a></li>
+      <li>Nº de Nuevas entidades internacionales vinculadas al CET</li>
+    </ol>
   </div>
 </section>
 <!-- Head page section================================================== -->
@@ -44,16 +44,16 @@
 </section>
 <!-- end head-page-section -->
 <section>
-  <div>
-        <ol class="breadcrumb shortcode">
-          <li><button class="buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button></li>
-          <li><button class="buttonlink" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button></li>
-          <li><button class="buttonlink" (click)="openModalAlert(alert)" data-toggle="modal">Alerta</button></li>
-        </ol>
+  <div class="shortcode">
+    <button class="btn btn-sm btn-clean-2 buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button>
+    <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button>
+    <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalAlert(alert)" data-toggle="modal">Alerta</button>
+    <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalSesion(iniciarsesion)" data-toggle="modal">Iniciar Sesion</button>
   </div>
 </section>
-<!-- about boxes
-================================================== -->
+<!-- space ================================================== -->
+<div class="pad-bt-60"></div>
+<!-- about boxes ================================================== -->
 <section>
     <div class="container">
       <!--subtitle row ===================================== -->
@@ -146,11 +146,11 @@
             <br><strong>#</strong>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-4" style="margin-top: 5px;">
-            <div class="pull-right">
-              <button class="btn btn-xs btn-warning " type="button" (click)="openmodaleditDocument(editDocument)">Editar</button>
+            <div class="pull-right">              
+              <!-- Cambios dani-->
+              <button class="btn btn-xs btn-warning " type="button" (click)="openmodaleditDocument(editDocument)">Modificar</button>
               <button class="btn btn-xs btn-success" type="button">Ver</button>
               <button class="btn btn-xs btn-info" type="button">Descargar</button>
-              <button class="btn btn-xs btn-danger" type="button">Eliminar</button>
             </div>
           </div>
         </div>
@@ -220,6 +220,7 @@
     </div>
     <app-indicator-alert></app-indicator-alert>
   </ng-template>
+
   <!--Modal Edit Document-->
   <ng-template #editDocument>
       <div class="modal-header" tabindex="-1">
@@ -235,64 +236,67 @@
             </div>
             <div class="form-group col-sm-12 col-md-12">
                 <label>Nombre</label>
-                <input type="text" placeholder="Nombre" class="form-control" id="name" required />
+                <input type="text" placeholder="servicio de evaluación técnica de integración de sistemas independientes" class="form-control" id="name" required />
             </div>
             <div class="form-group col-sm-12 col-md-12">
                 <label>Empresa</label>
-                <input type="text" placeholder="Nombre" class="form-control" id="empresa" required />
+                <input type="text" placeholder="Berries San Clemente" class="form-control" id="empresa" required />
             </div>
             <div class="form-group col-xs-12 col-sm-6 col-md-6">
                 <label for="date">Fecha Añadido</label>
-                <input type="text" placeholder="Ingrese fecha" class="form-control" id="date" required bsDatepicker />
+                <input type="text" placeholder="25-07-2018" class="form-control" id="date" required bsDatepicker />
               </div>
               <div class="form-group col-xs-12 col-sm-6 col-md-6">
                   <label for="date">Visita Técnica</label>
-                  <input type="text" placeholder="Ingrese fecha de Visita Técnica" class="form-control" id="date" required bsDatepicker />
+                  <input type="text" placeholder="30-07-2018" class="form-control" id="date" required bsDatepicker />
             </div>
             <div class="form-group col-sm-12 col-md-12">
                 <label>Detalle</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle del Documento"></textarea>
-            </div>
-            <div class="col-sm-12 col-md-12">
-              <h4 class="head-project-title">
-                    Documentación de respaldo
-              </h4>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="modal-table-responsive">
-                    <table class="table">
-                      <thead>
-                        <tr class="active">
-                          <th colspan="1">Nombre</th>
-                          <th class="hidden-xs" colspan="1">Tipo</th>
-                          <th colspan="2"> </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-      
-                        <!--
-                          Esta sección contiene uno de los documentos agregados
-                        -->
-                          <tr>
-                            <td>Holamundo.c</td>
-                            <td class="hidden-xs">Archivo</td>
-                            <td class="pull-right">
-                                <!--button class="btn btn-danger modal-btn-sm" type="button"> <i class="glyphicon glyphicon-remove"></i><small class="hidden-xs"> Eliminar</small></button-->
-                                <a class="btn btn-xs btn-danger" href="#.html">Eliminar</a>
-                              </td>
-                          </tr>
-                      </tbody>
-                    </table>
-                  </div>
-              </div>
-
-            <div class="form-group col-xs-12 col-sm-12 col-md-12">
-                <label for="quantity">Archivo de respaldo</label>
-                <input type="file" class="form-control" id="file-doc" required />
-            </div>    
-
+            </div>  
         </div>
       </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+      </div>
+    </ng-template>
+
+    <!--Sesion-->
+    <ng-template #iniciarsesion>
+        <div class="modal-header " tabindex="-1">
+            <div class="modal-title pull-left">
+              <i _ngcontent-c3="" class="glyphicon glyphicon-user"></i>
+              &nbsp;
+              Iniciar Sesión
+            </div>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="sesionModalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                  <img src="/assets/images/thinkagro.png" style="width: 100px;" class="center">
+              </div>
+              <div class="pad-bt-60"></div>
+
+              <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre de Usuario</label>
+                <input type="text" placeholder="Nombre" class="form-control" id="name" required />
+            </div>
+              <div class="form-group col-sm-12 col-md-12">
+                <label>Contraseña</label>
+                <input type="password" placeholder="******" class="form-control" id="name"/>
+              </div>
+
+              <div class="form-group col-sm-12 col-md-12">
+                <p class="text-center">¿Olvidó su Contraseña? que bueno</p>
+              </div>
+          </div>        
+      </div>
+
       <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
         <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
         <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>

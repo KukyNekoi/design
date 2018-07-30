@@ -1,4 +1,6 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, Input, ViewEncapsulation, TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 
 @Component({
   selector: 'app-indicator-detail-files',
@@ -8,11 +10,23 @@ import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 })
 export class IndicatorDetailFilesComponent implements OnInit {
   @Input() public recordFilter: any;
-  constructor() {
+  public editBigDocumentModalRef: BsModalRef;
+  public addDocumentModalRef: BsModalRef;
+
+  constructor(private modalService: BsModalService) {
     console.log(this.recordFilter);
   }
 
   ngOnInit() {
   }
 
+  openmodaleditBigDocument(template: TemplateRef<any>) {
+    this.editBigDocumentModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+
+  openmodaladdDocument(template: TemplateRef<any>) {
+    this.addDocumentModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+
 }
+
