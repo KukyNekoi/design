@@ -16,6 +16,7 @@ export class IndicatorDetailComponent implements OnInit {
   public dateFilterModalRef: BsModalRef;
   public editIndicatorModalRef: BsModalRef;
   public editMetaModalRef: BsModalRef;
+  public alertModalRef: BsModalRef;
   public editDocumentModalRef: BsModalRef;
   public sesionModalRef: BsModalRef;
 
@@ -149,10 +150,14 @@ export class IndicatorDetailComponent implements OnInit {
     this.editMetaModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
 
+  openModalAlert(template: TemplateRef<any>) {
+    this.alertModalRef = this.modalService.show(template, {backdrop: 'static'});
+  }
+
   openmodaleditDocument(template: TemplateRef<any>) {
     this.editDocumentModalRef = this.modalService.show(template, {backdrop: 'static'});
   }
-  
+
   openModalSesion(template: TemplateRef<any>) {
     this.sesionModalRef = this.modalService.show(template, {backdrop: 'static'});
   }

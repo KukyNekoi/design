@@ -9,12 +9,7 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 })
 export class HeaderComponent implements OnInit {
   @HostBinding('class') classes = 'clearfix'; // This adds a class to the host container
-  
-  
   constructor() { }
-
-  
-
   ngOnInit() {
   }
 
