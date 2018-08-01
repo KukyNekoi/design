@@ -1,11 +1,17 @@
 <div class="filter-shop-bar">
-  <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-primary pull-right" id="dropdownBasic1" ngbDropdownToggle>Tipo de gráfico <i class="fa fa-caret-down"></i> </button>             
-      <ul class="dropdown-menu" ngbDropdownMenu aria-labelledby="dropdownBasic1"> 
-        <ng-template ngFor let-option [ngForOf]="graph.option" let-i="index">         
-          <li><a>{{option.name}}</a></li>
-        </ng-template>
-      </ul>
+  <div class="btn-group" dropdown>
+    <button id="button-basic" dropdownToggle type="button" class="btn btn-primary dropdown-toggle" aria-controls="dropdown-basic">
+      Tipo de gráfico
+      <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu" *dropdownMenu role="menu" aria-labelledby="button-basic">
+      <ng-template ngFor let-option [ngForOf]="graph.option" let-i="index">
+        <li>
+          <a class="dropdown-item" href="#">{{option.name}}</a>
+        </li>
+      </ng-template>
+      
+    </ul>
   </div>
-</div> <!-- end filter-shop-bar -->
-
+</div>
+  <!-- end filter-shop-bar -->

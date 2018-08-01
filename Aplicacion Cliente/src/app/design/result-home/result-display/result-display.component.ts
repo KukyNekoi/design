@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ResultDisplayComponent implements OnInit {
   @Input() public result: any;
   constructor() {
-    console.log(this.result);
+   // console.log(this.result);
   }
 
   ngOnInit() {

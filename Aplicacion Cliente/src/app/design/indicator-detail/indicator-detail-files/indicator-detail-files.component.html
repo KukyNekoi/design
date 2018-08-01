@@ -16,7 +16,8 @@
           </div>
           <div class="col-xs-10 col-sm-4 col-md-4">
             <div class="pull-right">
-                <button class="btn btn-xs btn-warning " type="button">Editar</button>
+                <button class="btn btn-xs btn-info " type="button" (click)="openmodaladdDocument(addDocument)">Agregar</button>
+                <button class="btn btn-xs btn-warning" type="button" (click)="openmodaleditBigDocument(editBigDocument)">Modificar</button>
                 <button class="btn btn-xs btn-danger" type="button">Eliminar</button>
             </div>
           </div>
@@ -58,8 +59,120 @@
         
           </div>
           <hr>
-        </ng-template>
+        </ng-template>        
       </ng-template>
     </ngb-panel>
   </ng-template>
 </ngb-accordion>
+
+  <!--Modal Edit BIG Document-->
+  <ng-template #editBigDocument>
+      <div class="modal-header" tabindex="-1">
+        <h4 class="modal-title pull-left">Modificar Documento</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="editBigDocumentModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                  <h4 class="head-project-title">Información Documento</h4>
+              </div>
+            <div class="form-group col-sm-12 col-md-12">
+                  <label>Nombre</label>
+                  <input type="text" placeholder="Nota de prensa" class="form-control" id="name" required />
+              </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                  <label for="date">Fecha</label>
+                  <input type="text" placeholder="30-07-2018" class="form-control" id="date" required bsDatepicker />
+              </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                  <label for="date">Apariciones</label>
+                  <input type="number" placeholder="5" class="form-control" id="date" required bsDatepicker />
+              </div>
+              <div class="col-sm-12 col-md-12">
+                  <h4 class="head-project-title">
+                        Documentación de respaldo
+                  </h4>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <div class="modal-table-responsive">
+                      <table class="table">
+                        <thead>
+                          <tr class="active">
+                            <th colspan="1">Nombre</th>
+                            <th class="hidden-xs" colspan="1">Tipo</th>
+                            <th colspan="1"> </th>
+                            <th colspan="1"> </th>
+                          </tr>
+                      </thead>
+                      <tbody>
+          
+                            <!--
+                              Esta sección contiene uno de los documentos agregados
+                            -->
+                              <tr>
+                                <td>Holamundo.c</td>
+                                <td class="hidden-xs">Archivo</td>
+                                <td class="pull-right">
+                                    <button class="btn btn-xs btn-warning" type="button" >Modificar</button>
+                                    <a class="btn btn-xs btn-danger" href="#.html">Eliminar</a>
+                                  </td>
+                              </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                </div>
+          </div>
+        </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+      </div>
+    </ng-template>
+
+  <!--Modal Add Document-->
+    <ng-template #addDocument>
+        <div class="modal-header" tabindex="-1">
+          <h4 class="modal-title pull-left">Agregar Documento</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="addDocumentModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                  <h4 class="head-project-title">Información Básica</h4>
+                </div>
+                <div class="form-group col-sm-12 col-md-12">
+                    <label>Nombre</label>
+                    <input type="text" placeholder="Nombre" class="form-control" id="name" required />
+                </div>
+                <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                    <label for="date">Fecha</label>
+                    <input type="text" placeholder="Ingrese fecha" class="form-control" id="date" required bsDatepicker />
+                  </div>
+                  <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                      <label for="date">Tipo</label>
+                      <input type="text" placeholder="Ingrese cantidad de apariciones" class="form-control" id="date" required bsDatepicker />
+                </div>
+                <div class="form-group col-sm-12 col-md-12">
+                    <label>Detalle</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle del Documento"></textarea>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12">
+                    <h4 class="head-project-title">Subir Documento</h4>
+                </div>
+                <div class="form-group col-xs-12 col-sm-12 col-md-12">
+                    <label for="quantity">Archivo de respaldo</label>
+                    <input type="file" class="form-control" id="file-doc" required />
+                </div>    
+            </div>
+          </div>
+        <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+          <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+          <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+          <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+        </div>
+      </ng-template>
