@@ -6,15 +6,15 @@
         <div class="col-sm-6 text-center">
           <p>Año de Meta a Modificar</p>
           <!--Dropdown-->
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="btn-group" dropdown>
+            <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Seleccionar año
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu">
-              <li><a href="#">2019</a></li>
-              <li><a href="#">2020</a></li>
-              <li><a href="#">2021</a></li>
+            <ul class="dropdown-menu" *dropdownMenu role="menu">
+              <li><a class="dropdown-item" href="#">2019</a></li>
+              <li><a class="dropdown-item" href="#">2020</a></li>
+              <li><a class="dropdown-item" href="#">2021</a></li>
             </ul>
           </div>  
           <!--End Dropdown-->
@@ -23,16 +23,16 @@
         <div class="col-sm-6 text-center">
           <p>Mes de Meta a Modificar</p>
           <!--Dropdown-->
-          <div class="btn-group">
-            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <div class="btn-group" dropdown>
+            <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Seleccionar mes 
               <span class="caret"></span>
             </button>
 
-            <ul class="dropdown-menu">
-              <li><a href="#">Enero</a></li>
-              <li><a href="#">Febrero</a></li>
-              <li><a href="#">Marzo</a></li>
+            <ul class="dropdown-menu" *dropdownMenu>
+              <li><a class="dropdown-item" href="#">Enero</a></li>
+              <li><a class="dropdown-item" href="#">Febrero</a></li>
+              <li><a class="dropdown-item" href="#">Marzo</a></li>
             </ul>
           </div>  
           <!--End Dropdown-->

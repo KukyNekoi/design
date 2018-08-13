@@ -26,6 +26,7 @@ import { IndicatorAddRegistryComponent } from './design/indicator-detail/indicat
 import { IndicatorEditMetaComponent } from './design/indicator-detail/indicator-edit-meta/indicator-edit-meta.component';
 import { IndicatorEditIndicatorComponent } from './design/indicator-detail/indicator-edit-indicator/indicator-edit-indicator.component';
 import { IndicatorDateFilterComponent } from './design/indicator-detail/indicator-date-filter/indicator-date-filter.component';
+import { IndicatorAlertComponent } from './design/indicator-detail/indicator-alert/indicator-alert.component';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { IndicatorDateFilterComponent } from './design/indicator-detail/indicato
     IndicatorAddRegistryComponent,
     IndicatorEditMetaComponent,
     IndicatorEditIndicatorComponent,
-    IndicatorDateFilterComponent
+    IndicatorDateFilterComponent,
+    IndicatorAlertComponent
   ],
   imports: [
     NgbModule.forRoot(),
@@ -64,7 +66,8 @@ import { IndicatorDateFilterComponent } from './design/indicator-detail/indicato
     }, {
       path: 'result',  component: ResultHomeComponent
     }]),
-    FlexLayoutModule
+    FlexLayoutModule,
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

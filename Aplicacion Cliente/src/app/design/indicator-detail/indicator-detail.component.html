@@ -1,3 +1,12 @@
+<section>
+  <div>
+    <ol class="breadcrumb upcode">
+      <li><a href="">Home</a></li>
+      <li><a href="http://localhost:4200/indicator">Indicadores</a></li>
+      <li>Nº de Nuevas entidades internacionales vinculadas al CET</li>
+    </ol>
+  </div>
+</section>
 <!-- Head page section================================================== -->
 <section>
   <div id="head-page-section" class="l-grey-bg head-page-section">
@@ -35,15 +44,16 @@
 </section>
 <!-- end head-page-section -->
 <section>
-  <div>
-        <ol class="breadcrumb shortcode">
-          <li><button class="buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button></li>
-          <li><button class="buttonlink" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button></li>
-        </ol>
+  <div class="shortcode">
+    <button class="btn btn-sm btn-clean-2 buttonlink" (click)="openModalEditMeta(editMeta)" data-toggle="modal">Modificar Meta</button>
+    <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalEditIndicator(editIndicator)" data-toggle="modal">Modificar Indicador</button>
+    <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalAlert(alert)" data-toggle="modal">Alerta</button>
+    <button class="btn btn-sm btn-clean-2 buttonlink" style="margin-left: 5px;" (click)="openModalSesion(iniciarsesion)" data-toggle="modal">Iniciar Sesion</button>
   </div>
 </section>
-<!-- about boxes
-================================================== -->
+<!-- space ================================================== -->
+<div class="pad-bt-60"></div>
+<!-- about boxes ================================================== -->
 <section>
     <div class="container">
       <!--subtitle row ===================================== -->
@@ -54,8 +64,8 @@
             Filtrar por Fecha
           </button>
         </div>
-        <div class="col-sm-4">
-          <div style="text-align:right;">Mostrar Gráfico</div>
+        <div class="col-sm-4" style="text-align:right;">
+          <div >Mostrar Gráfico</div>
           <app-indicator-graph-option [graph]="data[0]" ></app-indicator-graph-option>
         </div>
       </div>
@@ -110,6 +120,45 @@
           </ngb-tabset>
         </div>
       </div>
+
+       <!-- Un solo documento -->
+       <div class="wide-border-promo-box promo-box pad-sec-40" style="padding: 20px;">
+        <div class="row">
+          <div class="col-md-12">
+                <h5 class="fixh5"><strong>servicio de evaluación técnica de integración de sistemas independientes</strong></h5>
+          </div><!--End col-md-12-->          
+        </div> <!-- end row -->
+        <div class="row">
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Empresa
+            <br><strong class="theme-color">Berries San Clemente</strong>
+          </div>
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Añadido
+            <br><strong>dd-mm-aaaa</strong>
+          </div>
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Visita Técnica
+            <br><strong>dd-mm-aaaa</strong>
+          </div>
+          <div class="col-xs-6 col-sm-2 col-md-2">
+            Detalle
+            <br><strong>#</strong>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4" style="margin-top: 5px;">
+            <div class="pull-right">              
+              <!-- Cambios dani-->
+              <button class="btn btn-xs btn-warning " type="button" (click)="openmodaleditDocument(editDocument)">Modificar</button>
+              <button class="btn btn-xs btn-success" type="button">Ver</button>
+              <button class="btn btn-xs btn-info" type="button">Descargar</button>
+            </div>
+          </div>
+        </div>
+      </div> 
+      <!-- end Un solo documento -->
+
+      <div class="pad-bt-60"></div>
+
     </div>
 </section>
 
@@ -156,3 +205,101 @@
     </div>
     <app-indicator-edit-meta></app-indicator-edit-meta>
   </ng-template>
+
+  <!--Modal Alerta-->
+  <ng-template #alert>
+    <div class="modal-header-success modal-header " tabindex="-1">
+      <div class="modal-title title-alert pull-left">
+        <i _ngcontent-c3="" class="glyphicon glyphicon-alert"></i>
+        &nbsp;
+        Alerta
+      </div>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="alertModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <app-indicator-alert></app-indicator-alert>
+  </ng-template>
+
+  <!--Modal Edit Document-->
+  <ng-template #editDocument>
+      <div class="modal-header" tabindex="-1">
+        <h4 class="modal-title pull-left">Modificar Documento</h4>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="editDocumentModalRef.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+              <h4 class="head-project-title">Información Básica</h4>
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre</label>
+                <input type="text" placeholder="servicio de evaluación técnica de integración de sistemas independientes" class="form-control" id="name" required />
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Empresa</label>
+                <input type="text" placeholder="Berries San Clemente" class="form-control" id="empresa" required />
+            </div>
+            <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                <label for="date">Fecha Añadido</label>
+                <input type="text" placeholder="25-07-2018" class="form-control" id="date" required bsDatepicker />
+              </div>
+              <div class="form-group col-xs-12 col-sm-6 col-md-6">
+                  <label for="date">Visita Técnica</label>
+                  <input type="text" placeholder="30-07-2018" class="form-control" id="date" required bsDatepicker />
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Detalle</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Detalle del Documento"></textarea>
+            </div>  
+        </div>
+      </div>
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+      </div>
+    </ng-template>
+
+    <!--Sesion-->
+    <ng-template #iniciarsesion>
+        <div class="modal-header " tabindex="-1">
+            <div class="modal-title pull-left">
+              <i _ngcontent-c3="" class="glyphicon glyphicon-user"></i>
+              &nbsp;
+              Iniciar Sesión
+            </div>
+            <button type="button" class="close pull-right" aria-label="Close" (click)="sesionModalRef.hide()">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                  <img src="/assets/images/thinkagro.png" style="width: 100px;" class="center">
+              </div>
+              <div class="pad-bt-60"></div>
+
+              <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre de Usuario</label>
+                <input type="text" placeholder="Nombre" class="form-control" id="name" required />
+            </div>
+              <div class="form-group col-sm-12 col-md-12">
+                <label>Contraseña</label>
+                <input type="password" placeholder="******" class="form-control" id="name"/>
+              </div>
+
+              <div class="form-group col-sm-12 col-md-12">
+                <p class="text-center">¿Olvidó su Contraseña? que bueno</p>
+              </div>
+          </div>        
+      </div>
+
+      <div class="modal-footer"> <!--modal-footer needed, in other case, the button will be outside the modal-->
+        <!--button type="submit" class="btn btn-success pull-right" [disabled]="!addRegistryForm.form.valid"><i class="glyphicon glyphicon-ok"></i> Agregar Registro</button-->
+        <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+        <button type="submit" class="btn btn-sm btn-primary" [disabled]="!addRegistryForm.form.valid">Aceptar</button>
+      </div>
+    </ng-template>
