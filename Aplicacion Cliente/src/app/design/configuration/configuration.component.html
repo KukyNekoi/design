@@ -32,20 +32,284 @@
     <div class="col-sm-6 col-md-6 col-xs-6 align-center">
       <i class="fa fa-users fa-5x" aria-hidden="true"></i><br>
         <h4 class="h4">Grupos de Indicadores</h4>
-        <button type="button" class="btn btn-link btn-sm padding btn-link-color">Crear grupo de Indicadores</button><br>
-        <button type="button" class="btn btn-link btn-sm padding btn-link-color">Modificar grupo de Indicadores</button><br>
-        <button type="button" class="btn btn-link btn-sm padding btn-link-color">Eliminar grupo de Indicadores <span class="badge badge-pill badge-danger">¡Cuidado!</span></button><br>  
+        <button type="button" class="btn btn-link btn-sm padding btn-link-color" (click)="openModalCreateGroup(CreateGroup)">Crear grupo de Indicadores</button><br>
+        <button type="button" class="btn btn-link btn-sm padding btn-link-color" (click)="openModalEditGroup(EditGroup)">Modificar grupo de Indicadores</button><br>
+        <button type="button" class="btn btn-link btn-sm padding btn-link-color" (click)="openModalDeleteGroup(DeleteGroup)">Eliminar grupo de Indicadores <span class="badge badge-pill badge-danger">¡Cuidado!</span></button><br>  
     </div>
 
     <div class="col-sm-6 col-md-6 col-xs-6 align-center">
       <i class="fa fa-line-chart fa-5x" aria-hidden="true"></i>
       <br>
       <h4 class="h4">Indicadores</h4>
-      <button type="button" class="btn btn-link btn-sm padding btn-link-color">Crear Indicador</button><br>
-      <button type="button" class="btn btn-link btn-sm padding btn-link-color">Modificar Indicador</button><br>
-      <button type="button" class="btn btn-link btn-sm padding btn-link-color">Eliminar Indicador <span class="badge badge-pill badge-danger">¡Cuidado!</span></button><br>
+      <button type="button" class="btn btn-link btn-sm padding btn-link-color" (click)="openModalCreateIndicator(CreateIndicator)">Crear Indicador</button><br>
+      <button type="button" class="btn btn-link btn-sm padding btn-link-color" (click)="openModalEditIndicator(EditIndicator)">Modificar Indicador</button><br>
+      <button type="button" class="btn btn-link btn-sm padding btn-link-color" (click)="openModalDeleteIndicator(DeleteIndicator)">Eliminar Indicador <span class="badge badge-pill badge-danger">¡Cuidado!</span></button><br>
     </div>
   </div>
 </section>
 
 <div class="pad-bt-60"></div>
+
+<!-- Modal Crear Grupo Indicadores-->
+<ng-template #CreateGroup>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Crear Grupo</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="createGroupModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre Grupo de Indicadores</label>
+                <input type="text" placeholder="Nombre Grupo de Indicador" class="form-control" id="name" required />
+            </div>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+      <button type="submit" class="btn btn-sm btn-primary">Crear</button>
+    </div>
+  </ng-template>
+
+<!-- Modal Modificar Grupo Indicadores -->
+<ng-template #EditGroup>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Modificar Grupo</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="editGroupModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12" >
+                <label>Nombre Grupo de Indicadores</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                    <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar Grupo de Indicador
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu role="menu">
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 2</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 3</a></li>
+                    </ul>
+                  </div>  
+                <!--End Dropdown-->
+              </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <input type="text" placeholder="Nombre Grupo de Indicador" class="form-control" id="name" required />
+            </div>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+      <button type="submit" class="btn btn-sm btn-primary">Modificar</button>
+    </div>
+  </ng-template>
+
+<!-- Modal Eliminar grupo de indicadores-->
+<ng-template #DeleteGroup>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Eliminar Grupo</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="deleteGroupModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12">
+                <h4 class="head-project-title"> <i class="fa fa-exclamation-circle fa-2x" aria-hidden="true" style="margin-right: 3px;"> </i>Advertencia</h4>
+                <p class="align-center">¡Si el grupo contiene indicadores, no podrá ser eliminado!</p><br>
+              </div>
+            <div class="form-group col-sm-12 col-md-12" >
+                <label>Nombre Grupo de Indicadores</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                    <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar Grupo de Indicador
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu role="menu">
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 2</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 3</a></li>
+                    </ul>
+                  </div>  
+                <!--End Dropdown-->
+              </div>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+      <button type="submit" class="btn btn-sm btn-primary">Eliminar</button>
+    </div>
+  </ng-template>
+
+<!-- Crear Indicador-->
+<ng-template #CreateIndicator>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Crear Indicador</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="createIndicatorModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12" >
+                <label>Nombre Grupo de Indicadores</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                    <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar Grupo de Indicador
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu role="menu">
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 2</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 3</a></li>
+                    </ul>
+                  </div>  
+                <!--End Dropdown-->
+              </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre Indicador</label>
+                <input type="text" placeholder="Nombre del Indicador" class="form-control" id="name" required />
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Seleccionar Permisos</label><BR>
+                <div class="col-sm-4 col-md-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 1</label><BR>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 2</label>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 1</label><BR>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 2</label>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 1</label><BR>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 2</label>
+                </div>
+            </div>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+      <button type="submit" class="btn btn-sm btn-primary">Crear</button>
+    </div>
+  </ng-template>
+
+<!-- Modificar Indicador-->
+<ng-template #EditIndicator>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Modificar Indicador</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="editIndicatorModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Nombre Indicador</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                    <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar Indicador
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu role="menu">
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 2</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 3</a></li>
+                    </ul>
+                  </div>  
+                <!--End Dropdown-->
+            </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <input type="text" placeholder="Nombre del Indicador" class="form-control" id="name" required />
+            </div>
+            <div class="form-group col-sm-12 col-md-12" >
+                <label>Nombre Grupo de Indicadores</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                    <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar Grupo de Indicador
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu role="menu">
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 2</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 3</a></li>
+                    </ul>
+                  </div>  
+                <!--End Dropdown-->
+              </div>
+            <div class="form-group col-sm-12 col-md-12">
+                <label>Seleccionar Permisos</label><BR>
+                <div class="col-sm-4 col-md-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 1</label><BR>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 2</label>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 1</label><BR>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 2</label>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 1</label><BR>
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Usuario 2</label>
+                </div>
+            </div>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+      <button type="submit" class="btn btn-sm btn-primary">Modificar</button>
+    </div>
+  </ng-template>
+
+<!-- Eliminar Indicador-->
+<ng-template #DeleteIndicator>
+    <div class="modal-header" tabindex="-1">
+      <h4 class="modal-title pull-left">Eliminar Indicador</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="deleteIndicatorModalRef.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="form-group col-sm-12 col-md-12" >
+                <label>Nombre del Indicadore</label><br>
+                <!--Dropdown-->
+                <div class="btn-group" dropdown>
+                    <button type="button" dropdownToggle class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      Seleccionar Indicador
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu role="menu">
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 2</a></li>
+                      <li><a class="dropdown-item" href="#">Vinculación con entidades nacionales e internacionales 3</a></li>
+                    </ul>
+                  </div>  
+                <!--End Dropdown-->
+              </div>
+        </div>
+      </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-sm btn-clean-2" ng-click=cancel()>Cancelar</button>
+      <button type="submit" class="btn btn-sm btn-primary">Eliminar</button>
+    </div>
+  </ng-template>
