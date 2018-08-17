@@ -1,3 +1,35 @@
 .align-center {
     text-align:center !important;
+    margin: 0 auto;
+}
+
+.align-right {
+    text-align:right !important;
+}
+
+.h4 {
+    margin-bottom: -10px!important;
+    color: #888888;
+}
+
+.btn-link-color {
+    color: #47b475!important;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.btn-link-color:hover {
+    color: #3a3c43!important;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.padding {
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
